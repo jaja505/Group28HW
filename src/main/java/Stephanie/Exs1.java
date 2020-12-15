@@ -53,7 +53,7 @@ public class Exs1 {
     3)  a - Create ArrayList of Person type and name it noEngineers
         b - Add all people from allPeople to noEngineers
         c - remove all people that are "software engineer" (hint: occupation.equals("software engineer"))
-        Very opnnntional:
+        Very optional:
         d - if any relatives associated remove them too. (hint: look out for spouseId and childId)
 
     4)  a - change occupation from "doctor" to "Artist" in allPeople
