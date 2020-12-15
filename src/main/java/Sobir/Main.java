@@ -10,6 +10,10 @@ public class Main {
   public static void main(String[] args) {
     ArrayList<Person> allPeople = new ArrayList<>(Arrays.asList(Population.createPopulation(200)));
 
+    for(Person each: allPeople){
+      System.out.println(each);
+    }
+
 
     /*
     1)  a - Create ArrayList of Person type and name it singlePeople
