@@ -1,0 +1,31 @@
+Tell me about yourself?
+What skills and qualities are need to become a SDET?
+Tell me what you expect to be doing on a daily basis as a SDET
+What are your strengths and your weaknesses?
+What is your biggest accomplishments?
+Where do you see yourself in five years' time?
+Why should we hire you?
+Why do you want to work for our company as a SDET?
+How would you deal with a member of your team who disagreed with the work you carried out as a SDET?
+Tell me a time when you worked as part of a team to solve a complex task
+Do you have any questions for me? Ask 3.
+Describe your current role
+Describe your daily activities
+Tell me about a project
+What do you like the most about testing?
+Can you explain SDLC?
+How would you test a ________?
+Why do we test?
+Explain the Agile - Scrum ceremonies/meetings and the different roles
+What is the testing hierarchy?
+What are the different type of testing and explain your favorite one.
+What are the differences between a Constructor and a Method?
+What are the differences between Arrays and ArrayList in Java?
+Can you explain how to reverse a String? (technical question)
+Can you explain how to Concat two arrays? (technical question)
+Can you explain how to create a custom method that returns odd numbers? (technical quesition)
+What is a repository?
+What are some Git commands?
+What is Remote & Local Repository?
+How do you automate User Stories from Jira?
+What is Boundary Value Analyze (BVA)
