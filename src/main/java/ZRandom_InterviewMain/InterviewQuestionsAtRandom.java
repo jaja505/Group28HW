@@ -11,7 +11,7 @@ public class InterviewQuestionsAtRandom {
     public static void main(String[] args) throws FileNotFoundException {
 
         Random rand1 = new Random();
-        FileInputStream file1 = new FileInputStream("src/ZRandom_InterviewMain/Questions.txt");
+        FileInputStream file1 = new FileInputStream("src/main/java/ZRandom_InterviewMain/Questions.txt");
 
         Scanner scanner = new Scanner(file1);
 
