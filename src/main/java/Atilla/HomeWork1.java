@@ -1,11 +1,9 @@
 package Atilla;
 
 import AsignmentUtils.Population.Person;
-import AsignmentUtils.Population.Population;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class HomeWork1 {
 

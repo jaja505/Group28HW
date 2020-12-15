@@ -1,12 +1,9 @@
 package Stephanie;
 
 import AsignmentUtils.Population.Person;
-import AsignmentUtils.Population.Population;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 
 public class Exs1 {
 
