@@ -3,8 +3,8 @@
 please create Exs1 class inside your package and copy past code below:
 
 ```java
-import AsignmentUtils.Population.Person;
-import AsignmentUtils.Population.Population;
+import Population.Person;
+import Population.Population;
 
 import java.util.ArrayList;
 import java.util.Arrays;
