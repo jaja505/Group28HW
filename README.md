@@ -3,15 +3,15 @@
 please create Exs1 class inside your package and copy past code below:
 
 ```java
-import Population.Person;
-import Population.Population;
+import AsignmentUtils.Population.Person;
+import AsignmentUtils.Population.AsignmentUtils.Population;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Exs1 {
   public static void main(String[] args) {
-    ArrayList<Person> allPeople = new ArrayList<>(Arrays.asList(Population.createPopulation(200)));
+    ArrayList<Person> allPeople = new ArrayList<>(Arrays.asList(AsignmentUtils.Population.createPopulation(200)));
 
     /*
     1)  a - Create ArrayList of Person type and name it singlePeople

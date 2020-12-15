@@ -1,7 +1,7 @@
 package Sobir;
 
-import Population.Person;
-import Population.Population;
+import AsignmentUtils.Population.Person;
+import AsignmentUtils.Population.Population;
 
 import java.util.ArrayList;
 import java.util.Arrays;
