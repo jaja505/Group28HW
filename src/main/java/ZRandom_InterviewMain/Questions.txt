@@ -1,6 +1,5 @@
 Tell me about yourself?
 What skills and qualities are need to become a SDET?
-Tell me what you expect to be doing on a daily basis as a SDET
 What are your strengths and your weaknesses?
 What is your biggest accomplishments?
 Where do you see yourself in five years' time?
@@ -24,8 +23,24 @@ What are the differences between Arrays and ArrayList in Java?
 Can you explain how to reverse a String? (technical question)
 Can you explain how to Concat two arrays? (technical question)
 Can you explain how to create a custom method that returns odd numbers? (technical quesition)
+What is GitHub?
 What is a repository?
 What are some Git commands?
 What is Remote & Local Repository?
 How do you automate User Stories from Jira?
 What is Boundary Value Analyze (BVA)
+What is a bug and How do you create a bug ticket?
+What is a Test Case?
+Can you explain the different types of Access Modifiers?
+What does OOP stands for?
+What are the 4 principles of OOP?
+What is the concept of Encapsulation?
+What is the concept of Inheritance?
+What is Selenium and how does it works?
+What pom.xml stands for?
+What is build? (selenium)
+Can you mention the differences between maven & selenium?
+What is a WebDriver?
+What is the folder structure when creating a project in maven?
+
+
