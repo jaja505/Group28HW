@@ -33,6 +33,7 @@ public class Timer {
                 System.exit(0);
             }
         }
+        System.out.println("Times Up");
         //Thread.sleep(2000);
 
 
