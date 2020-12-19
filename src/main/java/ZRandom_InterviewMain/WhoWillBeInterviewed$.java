@@ -20,7 +20,7 @@ public class WhoWillBeInterviewed$ {
 
     public static void main(String[] args) throws FileNotFoundException {//HAVE TO THROW EXCEPTION for the input file in case the filePath given is wrong
         Random rand = new Random();
-        FileInputStream file = new FileInputStream("src/ZRandom_InterviewMain/group28Names");//created a fileStream Object "File" that we will be reading.
+        FileInputStream file = new FileInputStream("src/main/java/ZRandom_InterviewMain/group28Names");//created a fileStream Object "File" that we will be reading.
 
 
         Scanner sc = new Scanner(file);//make a scanner specifically to read that file...NOT SYSTEM.IN
