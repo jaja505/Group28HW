@@ -3,9 +3,10 @@ package ZRandom_InterviewMain;
 //Author: Stephanie G.
 
 /*
-  Propose new features:
+  Proposed new features:
    1. add a timer feature to the program.
       1.1. adjust timer to reflect complexity of the questions, as some questions might take 1 to 2 min to answers, while others might take up to 5 min.
+      1.2. Open an official timer on the web using selenium. Ask in the console if the interviewee is ready and then based on input, open a browser and start a timer.
    2. Combine group28Names class so both programs functionalities can run at the same time
    3. Create an arrayList that stores questions that have been utilized twice
  */
@@ -34,7 +35,7 @@ public class InterviewQuestionsAtRandom {
 
         ArrayList<String> tempInterviewQuestions = new ArrayList<>();
 
-        for(int i =0;i<1;i++) {
+        for(int i =0;i<1;i++) {//Controls how many questions are printed out
             int randInt = rand1.nextInt(interviewQuestions.size());//initializing a random number using our RandomClass object "rand"
             tempInterviewQuestions.add(interviewQuestions.get(randInt));//adds the element in the random index that it generated
             interviewQuestions.remove(randInt);//removes the element that was just chosen.
