@@ -2,9 +2,13 @@ package ZRandom_InterviewMain;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+
+import javax.swing.text.Position;
 
 
 public class Timer {
@@ -17,6 +21,13 @@ public class Timer {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+
+        //==============================FORMATTING======================================================
+        Dimension d = new Dimension(1900,480);
+        Point p = new Point(0,0);
+        driver.manage().window().setPosition(p);
+        driver.manage().window().setSize(d);
+        //==============================================================================================
 
         driver.get("https://timer.onlineclock.net/");//goes to URL
         Select dropDown = new Select(driver.findElement(By.id("minutesSelect")));//FORM SOURCE CODE
