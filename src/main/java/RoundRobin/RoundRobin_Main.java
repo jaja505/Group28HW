@@ -38,8 +38,6 @@ public class RoundRobin_Main {
 
            while(true){ //it will give player a random question and ask if he wants to keep playing
 
-              // System.out.println(wholeQuestionsWithSolutionList.get(5).questionPart);
-
                Random rand = new Random();
 
                for(int i =0;i<1;i++) {//Controls how many questions are printed out
