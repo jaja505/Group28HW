@@ -9,6 +9,8 @@ public class RoundRobin_Main {
 
         ArrayList<People> group = People.assembleGroup();
         System.out.println(group);
+
+        
 /*
 1. Number of players needs to be asked
 2. What type of game did yu wanna play? Wild Card? Topic Based? Random? Think of MORE STYLES
