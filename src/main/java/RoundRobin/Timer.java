@@ -1,4 +1,4 @@
-package ZRandom_InterviewMain;
+package RoundRobin;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
