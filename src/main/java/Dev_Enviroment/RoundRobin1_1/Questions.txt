@@ -22,7 +22,7 @@ What are the differences between a Constructor and a Method?
 What are the differences between Arrays and ArrayList in Java?
 Can you explain how to reverse a String? (technical question)
 Can you explain how to Concat two arrays? (technical question)
-Can you explain how to create a custom method that returns odd numbers? (technical question)
+Can you explain how to create a custom method that returns odd numbers? (technical quesition)
 What is GitHub?
 What is a repository?
 What are some Git commands?
