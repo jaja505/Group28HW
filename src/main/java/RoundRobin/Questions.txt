@@ -3,7 +3,7 @@
 [SQ] 3. What are your strengths and your weaknesses? (3 min.) - Solution:
 [SQ] 4. What is your biggest accomplishments? (5 min.) - Solution:
 [SQ] 5. Where do you see yourself in five years' time? (3 min.) - Solution:
-[SQ] 6. Why should we hire you? (3. min.) - Solution:
+[SQ] 6. Why should we hire you? (3 min.) - Solution:
 [SQ] 7. Why do you want to work for our company as a SDET? (3 min.) - Solution:
 [SQ] 8. How would you deal with a member of your team who disagreed with the work you carried out as a SDET? (3 min.) - Solution:
 [SQ] 9. Tell me a time when you worked as part of a team to solve a complex task (5 min.) - Solution:

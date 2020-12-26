@@ -39,6 +39,7 @@ public class InterviewQuestionsAtRandom {
             int randInt = rand1.nextInt(interviewQuestions.size());//initializing a random number using our RandomClass object "rand"
             tempInterviewQuestions.add(interviewQuestions.get(randInt));//adds the element in the random index that it generated
             interviewQuestions.remove(randInt);//removes the element that was just chosen.
+
         }
         System.out.println();
 

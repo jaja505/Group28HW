@@ -9,18 +9,60 @@ import java.util.Scanner;
 
 public class RoundRobin_Main {
 
+    public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY
+    public static ArrayList<QuestionAndSolution> tempQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
+
     public static void main(String[] args) throws FileNotFoundException {
 
         ArrayList<People> group = People.assembleGroup();
         System.out.println(group);
 
         try {
-
             FileInputStream file1 = new FileInputStream("src/main/java/RoundRobin/Questions.txt");
             questionList(file1); // method to print the question
         } catch (FileNotFoundException e) {
             System.err.println("File path is wrong dude, Go To File1 and Change its path! I wont Load the questions till you change it");
         }
+
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("How many players?");
+        int players = scan.nextInt();
+
+        System.out.println("What type of game do you want to play?");
+        System.out.println("[1] Round Robin Style");
+        int typeOfGame = scan.nextInt();
+
+       if(typeOfGame == 1){
+
+           while(true){ //it will give player a random question and ask if he wants to keep playing
+
+              // System.out.println(wholeQuestionsWithSolutionList.get(5).questionPart);
+
+               Random rand = new Random();
+
+               for(int i =0;i<1;i++) {//Controls how many questions are printed out
+                   int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
+                   System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart);
+               }
+
+               System.out.println("Do you want to continue? (yes or no)");
+               String continueYesOrNo = scan.next();
+               if(continueYesOrNo.equals("yes")){
+                   continue;
+               }else{
+                   System.out.println("Thanks for playing!");
+                   break;
+               }
+           }
+
+
+
+
+
+        }
+
 
 
 
@@ -54,24 +96,19 @@ Then it will ask the user if they want to continue??WORK ON THIS PART
 
         }
 
-        ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY
 
-        for(int i=0; i< interviewQuestions.size();i++){
-            wholeQuestionsWithSolutionList.add(new QuestionAndSolution((i+1)));
-            wholeQuestionsWithSolutionList.get(i).questionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("]")+2, interviewQuestions.get(i).indexOf("-"));//CHANGE
-            wholeQuestionsWithSolutionList.get(i).solutionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("-")+2);
-            wholeQuestionsWithSolutionList.get(i).time = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("min.")-2, interviewQuestions.get(i).indexOf("min."));
-            wholeQuestionsWithSolutionList.get(i).topic = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("[")+1, interviewQuestions.get(i).indexOf("]"));
+
+        for (int i = 0; i < interviewQuestions.size(); i++) {
+            wholeQuestionsWithSolutionList.add(new QuestionAndSolution((i + 1)));
+            wholeQuestionsWithSolutionList.get(i).questionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("]") + 2, interviewQuestions.get(i).indexOf("-"));//CHANGE
+            wholeQuestionsWithSolutionList.get(i).solutionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("-") + 2);
+            wholeQuestionsWithSolutionList.get(i).time = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("min.") - 2, interviewQuestions.get(i).indexOf("min."));
+            wholeQuestionsWithSolutionList.get(i).topic = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("[") + 1, interviewQuestions.get(i).indexOf("]"));
 
 
         }
 
-        for(QuestionAndSolution each : wholeQuestionsWithSolutionList){
-            System.out.println(each.questionPart);
-            System.out.println(each.solutionPart);
-            System.out.println(each.time);
-            System.out.println(each.topic);
-        }
+
 
 /*
         ArrayList<String> tempInterviewQuestions = new ArrayList<>();
