@@ -22,6 +22,7 @@ public class Question {
 
     }
 
+
     /*
     CREATE A METHOD TO TAKE THE TIME OUT OF THE QUESTION...FOR EXAMPLE:
           The question will have this format below:
