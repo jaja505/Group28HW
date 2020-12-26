@@ -11,12 +11,14 @@ public class RoundRobin_Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        ArrayList<People> group = People.assembleGroup();
+        ArrayList<People> group = People.assembleGroup(); //@author: Liv
         System.out.println(group);
 
         try {
+
             FileInputStream file1 = new FileInputStream("src/main/java/RoundRobin/Questions.txt");
             questionList(file1); // method to print the question
+
         } catch (Exception e) {
             System.err.println("File path is wrong dude, Go To File1 and Change its path! I wont Load the questions till you change it");
         }
@@ -27,8 +29,14 @@ public class RoundRobin_Main {
 
 /*
 1. Number of players needs to be asked
-2. What type of game did yu wanna play? Wild Card? Topic Based? Random? Think of MORE STYLES
+2. What type of game did yu wanna play? Wild Card? Hot Seat(Time is subtracted)? Topic Based? Random? Think of MORE STYLES
 
+==================
+First we throw out the question
+After 5 seconds the timer starts
+Once timer is done its going to close the driver
+Then it will print the solution
+Then it will ask the user if they want to continue??WORK ON THIS PART
 
  */
 
@@ -50,8 +58,8 @@ public class RoundRobin_Main {
         ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY
 
         for(int i=0; i< interviewQuestions.size();i++){
-            wholeQuestionsWithSolutionList.add(new QuestionAndSolution((i+1)));
-            wholeQuestionsWithSolutionList.get(i).questionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("]")+2, interviewQuestions.get(i).indexOf("-"));//CHANGE
+            wholeQuestionsWithSolutionList.add(new QuestionAndSolution((i+1))); // if index# = 0, then QuestionAndSolution.questionNumber = 1;
+            wholeQuestionsWithSolutionList.get(i).questionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("]")+2, interviewQuestions.get(i).indexOf("-")-1);//CHANGE
             wholeQuestionsWithSolutionList.get(i).solutionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("-")+2);
 
 
