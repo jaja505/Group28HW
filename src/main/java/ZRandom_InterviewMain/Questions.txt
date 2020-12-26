@@ -42,5 +42,10 @@ What is build? (selenium)
 Can you mention the differences between maven & selenium?
 What is a WebDriver?
 What is the folder structure when creating a project in maven?
+What did you talk about in your last retro meeting? Give an Example Please...
+Name the 4 Access Modifiers..Describe 2 of them.
+
+[Java] 47. What is the difference between Default AccessMod and Protected AccessMod? (1 min.) - The soultion is.....
+
 
 
