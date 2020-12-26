@@ -1,6 +1,8 @@
-package Dev_Enviroment.RoundRobin1_1;
+package RoundRobin;
 
-public class Question {
+import ZRandom_InterviewMain.Timer;
+
+public class QuestionAndSolution {
 
     /*
     Constructor: public Questions(){
@@ -8,12 +10,17 @@ public class Question {
 
      */
     public int isSolvedCount;
-    public String numberOfQuestion;
+    public int numberOfQuestion;
+    public String questionPart, solutionPart;
+    public Timer time;
+    public String topic;
 
 
 
-    public Question(String numberOfQuestion) {//constructor format
+
+    public QuestionAndSolution(int numberOfQuestion) {//constructor format
         this.numberOfQuestion = numberOfQuestion;
+
 
     }
 
@@ -21,6 +28,7 @@ public class Question {
         isSolvedCount++;
 
     }
+
 
 
     /*

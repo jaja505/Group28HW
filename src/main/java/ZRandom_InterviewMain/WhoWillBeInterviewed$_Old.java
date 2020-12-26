@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class WhoWillBeInterviewed$ {
+public class WhoWillBeInterviewed$_Old {
 
     public static DateTimeFormatter df = DateTimeFormatter.ofPattern("EEEE - MMM, dd"); // MADE A PUBLIC STATIC FORMATTER SO I CAN USE ANYWHERE IN MY CLASS
     public static DateTimeFormatter df2 = DateTimeFormatter.ofPattern("MM/dd"); // MADE A PUBLIC STATIC FORMATTER SO I CAN USE ANYWHERE IN MY CLASS
