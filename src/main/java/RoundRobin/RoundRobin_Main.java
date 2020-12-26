@@ -17,7 +17,7 @@ public class RoundRobin_Main {
         try {
             FileInputStream file1 = new FileInputStream("src/main/java/RoundRobin/Questions.txt");
             questionList(file1); // method to print the question
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             System.err.println("File path is wrong dude, Go To File1 and Change its path! I wont Load the questions till you change it");
         }
 
@@ -53,6 +53,8 @@ public class RoundRobin_Main {
             wholeQuestionsWithSolutionList.add(new QuestionAndSolution((i+1)));
             wholeQuestionsWithSolutionList.get(i).questionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("]")+2, interviewQuestions.get(i).indexOf("-"));//CHANGE
             wholeQuestionsWithSolutionList.get(i).solutionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("-")+2);
+            wholeQuestionsWithSolutionList.get(i).time = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("min.")-2, interviewQuestions.get(i).indexOf("min."));
+            wholeQuestionsWithSolutionList.get(i).topic = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("[")+1, interviewQuestions.get(i).indexOf("]"));
 
 
         }
@@ -60,6 +62,8 @@ public class RoundRobin_Main {
         for(QuestionAndSolution each : wholeQuestionsWithSolutionList){
             System.out.println(each.questionPart);
             System.out.println(each.solutionPart);
+            System.out.println(each.time);
+            System.out.println(each.topic);
         }
 
 /*
