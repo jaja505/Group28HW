@@ -52,11 +52,14 @@ public class RoundRobin_Main {
         for(int i=0; i< interviewQuestions.size();i++){
             wholeQuestionsWithSolutionList.add(new QuestionAndSolution((i+1)));
             wholeQuestionsWithSolutionList.get(i).questionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("]")+2, interviewQuestions.get(i).indexOf("-"));//CHANGE
+            wholeQuestionsWithSolutionList.get(i).solutionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("-")+2);
+
 
         }
 
         for(QuestionAndSolution each : wholeQuestionsWithSolutionList){
             System.out.println(each.questionPart);
+            System.out.println(each.solutionPart);
         }
 
 /*

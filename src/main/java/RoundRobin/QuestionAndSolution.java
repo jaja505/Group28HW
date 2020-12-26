@@ -10,7 +10,7 @@ public class QuestionAndSolution {
     public int isSolvedCount;
     public int numberOfQuestion;
     public String questionPart, solutionPart;
-    public Timer time;
+    public int time;
     public String topic;
 
 
