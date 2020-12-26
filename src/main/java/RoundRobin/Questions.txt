@@ -1,4 +1,4 @@
-[SQ] 1. Tell me about yourself? (5 min.) - Solution: Varies from person to person
+[SS] 1. Tell me about yourself? (5 min.) - Solution: Varies from person to person
 [SQ] 2. What skills and qualities are need to become a SDET? (3 min.) - Solution:
 [SQ] 3. What are your strengths and your weaknesses? (3 min.) - Solution:
 [SQ] 4. What is your biggest accomplishments? (5 min.) - Solution:

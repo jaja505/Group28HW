@@ -15,6 +15,7 @@ public class RoundRobin_Main {
         System.out.println(group);
 
         try {
+
             FileInputStream file1 = new FileInputStream("src/main/java/RoundRobin/Questions.txt");
             questionList(file1); // method to print the question
         } catch (FileNotFoundException e) {
@@ -27,8 +28,14 @@ public class RoundRobin_Main {
 
 /*
 1. Number of players needs to be asked
-2. What type of game did yu wanna play? Wild Card? Topic Based? Random? Think of MORE STYLES
+2. What type of game did yu wanna play? Wild Card? Hot Seat(Time is subtracted)? Topic Based? Random? Think of MORE STYLES
 
+==================
+First we throw out the question
+After 5 seconds the timer starts
+Once timer is done its going to close the driver
+Then it will print the solution
+Then it will ask the user if they want to continue??WORK ON THIS PART
 
  */
 
