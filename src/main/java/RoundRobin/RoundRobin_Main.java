@@ -1,5 +1,11 @@
 package RoundRobin;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -25,16 +31,15 @@ public class RoundRobin_Main {
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY
 
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 /*
 @Liv
         ArrayList<People> group = People.assembleGroup();
         System.out.println(group);
 */
-/*
-DONT TOUCH THIS!!!
-        questionWindowSetup("hello world");
-*/
+
+
+
         try {
             FileInputStream file1 = new FileInputStream("src/main/java/RoundRobin/Questions.txt");
             populateQuestionList(file1); // method to print the question
@@ -57,7 +62,7 @@ DONT TOUCH THIS!!!
         int typeOfGame = scan.nextInt();
 
         if (typeOfGame == 1) {
-//*****TASK:  *****NEED TO ADD A LIMIT HOW MANY TIMES THE SAME QUESTION CAN BE IN THE LOOP. ONLY ALLOWED 2 OF THE SAME QUESTION PER GAME.
+
 
             boolean isNotOver = true;
 
@@ -71,11 +76,10 @@ DONT TOUCH THIS!!!
 
                     int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
                     wholeQuestionsWithSolutionList.get(randInt).questionAnswered();
+                    questionWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart); // RUNS
 
-                    int x = wholeQuestionsWithSolutionList.get(randInt).isSolvedCount;
 
-                    System.out.println((wholeQuestionsWithSolutionList.get(randInt).questionPart) + " " + wholeQuestionsWithSolutionList.get(randInt).isSolvedCount);
-
+//task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM!
                     if (wholeQuestionsWithSolutionList.get(randInt).isSolvedCount >= 2) {
                         wholeQuestionsWithSolutionList.remove(wholeQuestionsWithSolutionList.get(randInt));
                     }
@@ -154,20 +158,27 @@ DONT TOUCH THIS!!!
 
     }
 
-    /*
-/*
-DONT TOUCH THIS!!!
-    public static void questionWindowSetup(String str){
+
+
+    public static void questionWindowSetup(String str) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        driver.get("https://watsgucci.github.io/");
+
+        Dimension d = new Dimension(1200,500);
+        driver.manage().window().setSize(d);
+
+
+
+        driver.get("https://watsgucci.github.io/");// from a different project/repo. This is the github domain i created thats given to me from my github account!. HTML file is in watsgucci.github.io repo.
         driver.findElement(By.name("questionText")).sendKeys(str);
 
+        Thread.sleep(3000);
+        driver.close();
 
     }
 
-*/
+
 
 
 }
