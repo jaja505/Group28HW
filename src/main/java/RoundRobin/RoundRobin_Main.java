@@ -31,11 +31,16 @@ public class RoundRobin_Main {
         ArrayList<People> group = People.assembleGroup();
         System.out.println(group);
 */
+/*
+DONT TOUCH THIS!!!
+        questionWindowSetup("hello world");
+*/
         try {
             FileInputStream file1 = new FileInputStream("src/main/java/RoundRobin/Questions.txt");
             populateQuestionList(file1); // method to print the question
         } catch (FileNotFoundException e) {
             System.err.println("File path is wrong dude, Go To File1 and Change its path! I wont Load the questions till you change it");
+            System.exit(0);
         }
 
 
@@ -52,7 +57,7 @@ public class RoundRobin_Main {
         int typeOfGame = scan.nextInt();
 
         if (typeOfGame == 1) {
-//*****TASK:  *****NEED TO ADD A LIMIT hOW MANY TIMES THE SAME QUESTION CAN BE IN THE LOOP. ONLY ALLOWED 2 OF THE SAME QUESTION PER GAME.
+//*****TASK:  *****NEED TO ADD A LIMIT HOW MANY TIMES THE SAME QUESTION CAN BE IN THE LOOP. ONLY ALLOWED 2 OF THE SAME QUESTION PER GAME.
 
             boolean isNotOver = true;
 
@@ -67,25 +72,27 @@ public class RoundRobin_Main {
                     int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
                     wholeQuestionsWithSolutionList.get(randInt).questionAnswered();
 
-                    if (wholeQuestionsWithSolutionList.get(randInt).isSolvedCount > 2) {
+                    int x = wholeQuestionsWithSolutionList.get(randInt).isSolvedCount;
+
+                    System.out.println((wholeQuestionsWithSolutionList.get(randInt).questionPart) + " " + wholeQuestionsWithSolutionList.get(randInt).isSolvedCount);
+
+                    if (wholeQuestionsWithSolutionList.get(randInt).isSolvedCount >= 2) {
                         wholeQuestionsWithSolutionList.remove(wholeQuestionsWithSolutionList.get(randInt));
                     }
-                   // System.out.println(wholeQuestionsWithSolutionList.get(randInt).isSolvedCount);
+                    // System.out.println(wholeQuestionsWithSolutionList.get(randInt).isSolvedCount);
 
-                    /* if(wholeQuestionsWithSolutionList.isEmpty()){
-                        System.out.println("No more Questions. Thanks for playing");
-                        isNotOver = false;
-                        break;
-                    }
 
-                     */
+
 
                     System.out.println("=====================================================================================================");
 
-                    System.out.println((wholeQuestionsWithSolutionList.get(randInt).questionPart)+" "+wholeQuestionsWithSolutionList.get(randInt).isSolvedCount);
 
                 }
-
+                if (wholeQuestionsWithSolutionList.isEmpty()) {
+                    System.out.println("No more Questions. Thanks for playing");
+                    isNotOver = false;
+                    break;
+                }
                 System.out.println("Do you want to continue? (yes or no)");
 
                 String continueYesOrNo = scan.next();
@@ -96,8 +103,6 @@ public class RoundRobin_Main {
                     break;
                 }
             }
-
-
         }
 
 
@@ -148,12 +153,15 @@ public class RoundRobin_Main {
 */
 
     }
+
+    /*
 /*
+DONT TOUCH THIS!!!
     public static void questionWindowSetup(String str){
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        driver.get("http://localhost:63342/Group28HW/RoundRobin/QuestionDisplay.html?_ijt=cqij6sefp882shlps0jfdj7bl4");
+        driver.get("https://watsgucci.github.io/");
         driver.findElement(By.name("questionText")).sendKeys(str);
 
 
