@@ -1,11 +1,36 @@
 package RoundRobin;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import javax.swing.plaf.metal.MetalIconFactory;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.*;
+import java.awt.font.*;
+import java.io.*;
+import javax.swing.*;
+
+
+/*
+1. Number of players needs to be asked
+2. What type of game did yu wanna play? Wild Card? Hot Seat(Time is subtracted)? Topic Based? Random Round Robin? Think of MORE STYLES
+
+==================
+First we throw out the question
+After 5 seconds the timer starts
+Once timer is done its going to close the driver
+Then it will print the solution
+Then it will ask the user if they want to continue??WORK ON THIS PART
+
+ */
 
 public class RoundRobin_Main {
 
@@ -13,10 +38,11 @@ public class RoundRobin_Main {
     public static ArrayList<QuestionAndSolution> tempQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
 
     public static void main(String[] args) throws FileNotFoundException {
-
+/*
+@Liv
         ArrayList<People> group = People.assembleGroup();
         System.out.println(group);
-
+*/
         try {
             FileInputStream file1 = new FileInputStream("src/main/java/RoundRobin/Questions.txt");
             questionList(file1); // method to print the question
@@ -34,50 +60,32 @@ public class RoundRobin_Main {
         System.out.println("[1] Round Robin Style");
         int typeOfGame = scan.nextInt();
 
-       if(typeOfGame == 1){
+        if (typeOfGame == 1) {
+//*****TASK:  *****NEED TO ADD A LIMIT hOW MANY TIMES THE SAME QUESTION CAN BE IN THE LOOP. ONLY ALLOWED 2 OF THE SAME QUESTION PER GAME.
 
-           while(true){ //it will give player a random question and ask if he wants to keep playing
+            while (true) { //it will give player a random question and ask if he wants to keep playing
 
-               Random rand = new Random();
+                Random rand = new Random();
 
-               for(int i =0;i<1;i++) {//Controls how many questions are printed out
-                   int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
-                   System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart);
-               }
-
-               System.out.println("Do you want to continue? (yes or no)");
-               String continueYesOrNo = scan.next();
-               if(continueYesOrNo.equals("yes")){
-                   continue;
-               }else{
-                   System.out.println("Thanks for playing!");
-                   break;
-               }
-           }
-
-
-
+                for (int i = 0; i < 1; i++) {//Controls how many questions are printed out
+                    int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
+                    System.out.println((wholeQuestionsWithSolutionList.get(randInt).questionPart));
+                }
+                System.out.println("Do you want to continue? (yes or no)");
+                String continueYesOrNo = scan.next();
+                if (continueYesOrNo.equals("yes")) {
+                    continue;
+                } else {
+                    System.out.println("Thanks for playing!");
+                    break;
+                }
+            }
 
 
         }
 
 
 
-
-
-
-/*
-1. Number of players needs to be asked
-2. What type of game did yu wanna play? Wild Card? Hot Seat(Time is subtracted)? Topic Based? Random? Think of MORE STYLES
-
-==================
-First we throw out the question
-After 5 seconds the timer starts
-Once timer is done its going to close the driver
-Then it will print the solution
-Then it will ask the user if they want to continue??WORK ON THIS PART
-
- */
 
     }
 
@@ -93,7 +101,6 @@ Then it will ask the user if they want to continue??WORK ON THIS PART
             interviewQuestions.add(scanner.nextLine());
 
         }
-
 
 
         for (int i = 0; i < interviewQuestions.size(); i++) {
@@ -127,4 +134,21 @@ Then it will ask the user if they want to continue??WORK ON THIS PART
 */
 
     }
+/*
+    public static void questionWindowSetup(String str){
+
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://localhost:63342/Group28HW/RoundRobin/QuestionDisplay.html?_ijt=cqij6sefp882shlps0jfdj7bl4");
+        driver.findElement(By.name("questionText")).sendKeys(str);
+
+
+    }
+
+*/
+
+
 }
+
+
+
