@@ -56,7 +56,7 @@ public class RoundRobin_Main {
 
             boolean isNotOver = true;
 
-            while (isNotOver) { //it will give player a random question and ask if he wants to keep playing
+            while (true) { //it will give player a random question and ask if he wants to keep playing
 
                 Random rand = new Random();
                 ArrayList<QuestionAndSolution> tempQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
@@ -70,15 +70,20 @@ public class RoundRobin_Main {
                     if (wholeQuestionsWithSolutionList.get(randInt).isSolvedCount > 2) {
                         wholeQuestionsWithSolutionList.remove(wholeQuestionsWithSolutionList.get(randInt));
                     }
+                   // System.out.println(wholeQuestionsWithSolutionList.get(randInt).isSolvedCount);
 
-                    System.out.println((wholeQuestionsWithSolutionList.get(randInt).questionPart));
+                    /* if(wholeQuestionsWithSolutionList.isEmpty()){
+                        System.out.println("No more Questions. Thanks for playing");
+                        isNotOver = false;
+                        break;
+                    }
 
-                }
+                     */
 
-                if(wholeQuestionsWithSolutionList.size() == 0){
-                    System.out.println("No more Questions. Thanks for playing");
-                    isNotOver = false;
-                    break;
+                    System.out.println("=====================================================================================================");
+
+                    System.out.println((wholeQuestionsWithSolutionList.get(randInt).questionPart)+" "+wholeQuestionsWithSolutionList.get(randInt).isSolvedCount);
+
                 }
 
                 System.out.println("Do you want to continue? (yes or no)");
