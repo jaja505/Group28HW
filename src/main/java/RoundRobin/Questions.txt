@@ -1,49 +1,7 @@
 [SS] 1. Tell me about yourself? (5 min.) - Solution: Varies from person to person
 [SS] 2. What skills and qualities are need to become a SDET? (3 min.) - Solution:
 [SS] 3. What are your strengths and your weaknesses? (3 min.) - Solution:
-[SS] 4. What is your biggest accomplishments? (5 min.) - Solution:
-[SS] 5. Where do you see yourself in five years' time? (3 min.) - Solution:
-[SS] 6. Why should we hire you? (3 min.) - Solution:
-[SS] 7. Why do you want to work for our company as a SDET? (3 min.) - Solution:
-[SS] 8. How would you deal with a member of your team who disagreed with the work you carried out as a SDET? (3 min.) - Solution:
-[SS] 9. Tell me a time when you worked as part of a team to solve a complex task (5 min.) - Solution:
-[SS] 10. Do you have any questions for me? Ask 3. (2 min.) - Solution:
-[SS] 11. Describe your current role (5 min.) - Solution:
-[SS] 12. Describe your daily activities (5 min.) - Solution:
-[SS] 13. Tell me about a project (5 min.) - Solution:
-[SS] 14. What do you like the most about testing? (2 min.) - Solution:
-[SS] 15. Can you explain SDLC? (5 min.) - Solution:
-[SS] 16. How would you test a ________? (5 min.) - Solution:
-[SS] 17. Why do we test? (2 min.) - Solution:
-[SS] 18. Explain the Agile - Scrum ceremonies/meetings and the different roles (5 min.) - Solution:
-[SS] 19. What is the testing hierarchy? (3 min.) - Solution:
-[SS] 20. What are the different type of testing and explain your favorite one. (3 min.) - Solution:
-[Java] 21. What are the differences between a Constructor and a Method? (2 min.) - Solution:
-[Java] 22.What are the differences between Arrays and ArrayList in Java? (2 min.) - Solution:
-[Java] 23. Can you explain how to reverse a String? (technical question) (2 min.) - Solution:
-[Java] 24. Can you explain how to Concat two arrays? (technical question) (2 min.) - Solution:
-[Java] 25. Can you explain how to create a custom method that returns odd numbers? (technical question) (2 min.) - Solution:
-[GH] 26. What is GitHub? (2 min.) - Solution:
-[GH] 27. What is a repository? (2 min.) - Solution:
-[GH] 28. What are some Git commands? (2 min.) - Solution:
-[GH] 29. What is Remote & Local Repository? (2 min.) - Solution:
-[Jira] 30. How do you automate User Stories from Jira? (3 min.) - Solution:
-[SS] 31. What is Boundary Value Analyze (BVA) (2 min.) - Solution:
-[Jira] 32.What is a bug and How do you create a bug ticket? (3 min.) - Solution:
-[SS] 33. What is a Test Case? (2 min.) - Solution:
-[Java] 34. Can you explain the different types of Access Modifiers? (3 min.) - Solution:
-[Java] 35. What does OOP stands for? (2 min.) - Solution:
-[Java] 36. What are the 4 principles of OOP? (2 min.) - Solution:
-[Java] 37. What is the concept of Encapsulation? (2 min.) - Solution:
-[Java] 38. What is the concept of Inheritance? (2 min.) - Solution:
-[Selenium] 39. What is Selenium and how does it works? (3 min.) - Solution:
-[Selenium] 40. What pom.xml stands for? (2 min.) - Solution:
-[Selenium] 41. What is build? (2 min.) - Solution:
-[Selenium] 42. Can you mention the differences between maven & selenium? (3 min.) - Solution:
-[Selenium] 43. What is a WebDriver? (2 min.) - Solution:
-[Selenium] 44. What is the folder structure when creating a project in maven? (2 min.) - Solution:
-[SS] 45. What did you talk about in your last retro meeting? Give an Example Please... (5 min.) - Solution:
-[Java] 46. What is the difference between Default AccessMod and Protected AccessMod? (1 min.) - The solution is.....
+
 
 
 

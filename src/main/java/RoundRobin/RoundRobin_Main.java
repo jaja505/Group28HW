@@ -54,15 +54,33 @@ public class RoundRobin_Main {
         if (typeOfGame == 1) {
 //*****TASK:  *****NEED TO ADD A LIMIT hOW MANY TIMES THE SAME QUESTION CAN BE IN THE LOOP. ONLY ALLOWED 2 OF THE SAME QUESTION PER GAME.
 
-            while (true) { //it will give player a random question and ask if he wants to keep playing
+            boolean isNotOver = true;
+
+            while (isNotOver) { //it will give player a random question and ask if he wants to keep playing
 
                 Random rand = new Random();
                 ArrayList<QuestionAndSolution> tempQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
 
 
                 for (int i = 0; i < 1; i++) {//Controls how many questions are printed out
+
                     int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
+                    wholeQuestionsWithSolutionList.get(randInt).questionAnswered();
+
+                    if (wholeQuestionsWithSolutionList.get(randInt).isSolvedCount > 2) {
+                        wholeQuestionsWithSolutionList.remove(wholeQuestionsWithSolutionList.get(randInt));
+                    }
+
+                   if(wholeQuestionsWithSolutionList.size() == 1){
+                        System.out.println("No more Questions. Thanks for playing");
+                        isNotOver = false;
+                        break;
+                    }
+
+
+
                     System.out.println((wholeQuestionsWithSolutionList.get(randInt).questionPart));
+
                 }
                 System.out.println("Do you want to continue? (yes or no)");
 
@@ -77,10 +95,6 @@ public class RoundRobin_Main {
 
 
         }
-
-
-
-
 
 
     }
