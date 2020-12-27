@@ -58,6 +58,7 @@ public class RoundRobin_Main {
 
         System.out.println("What type of game do you want to play?");
         System.out.println("[1] Round Robin Style");
+        System.out.println("[2] Topic Based Style");
         int typeOfGame = scan.nextInt();
 
         if (typeOfGame == 1) {
@@ -83,6 +84,8 @@ public class RoundRobin_Main {
 
 
         }
+
+
 
 
 
