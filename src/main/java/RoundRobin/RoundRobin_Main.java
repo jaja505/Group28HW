@@ -71,17 +71,16 @@ public class RoundRobin_Main {
                         wholeQuestionsWithSolutionList.remove(wholeQuestionsWithSolutionList.get(randInt));
                     }
 
-                   if(wholeQuestionsWithSolutionList.size() == 1){
-                        System.out.println("No more Questions. Thanks for playing");
-                        isNotOver = false;
-                        break;
-                    }
-
-
-
                     System.out.println((wholeQuestionsWithSolutionList.get(randInt).questionPart));
 
                 }
+
+                if(wholeQuestionsWithSolutionList.size() == 0){
+                    System.out.println("No more Questions. Thanks for playing");
+                    isNotOver = false;
+                    break;
+                }
+
                 System.out.println("Do you want to continue? (yes or no)");
 
                 String continueYesOrNo = scan.next();
