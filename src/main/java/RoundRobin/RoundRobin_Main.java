@@ -1,22 +1,10 @@
 package RoundRobin;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import javax.swing.plaf.metal.MetalIconFactory;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.*;
-import java.awt.font.*;
-import java.io.*;
-import javax.swing.*;
 
 
 /*
@@ -35,7 +23,7 @@ Then it will ask the user if they want to continue??WORK ON THIS PART
 public class RoundRobin_Main {
 
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY
-    public static ArrayList<QuestionAndSolution> tempQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
+
 
     public static void main(String[] args) throws FileNotFoundException {
 /*
@@ -45,7 +33,7 @@ public class RoundRobin_Main {
 */
         try {
             FileInputStream file1 = new FileInputStream("src/main/java/RoundRobin/Questions.txt");
-            questionList(file1); // method to print the question
+            populateQuestionList(file1); // method to print the question
         } catch (FileNotFoundException e) {
             System.err.println("File path is wrong dude, Go To File1 and Change its path! I wont Load the questions till you change it");
         }
@@ -59,6 +47,8 @@ public class RoundRobin_Main {
         System.out.println("What type of game do you want to play?");
         System.out.println("[1] Round Robin Style");
         System.out.println("[2] Topic Based Style");
+
+
         int typeOfGame = scan.nextInt();
 
         if (typeOfGame == 1) {
@@ -67,12 +57,15 @@ public class RoundRobin_Main {
             while (true) { //it will give player a random question and ask if he wants to keep playing
 
                 Random rand = new Random();
+                ArrayList<QuestionAndSolution> tempQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
+
 
                 for (int i = 0; i < 1; i++) {//Controls how many questions are printed out
                     int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
                     System.out.println((wholeQuestionsWithSolutionList.get(randInt).questionPart));
                 }
                 System.out.println("Do you want to continue? (yes or no)");
+
                 String continueYesOrNo = scan.next();
                 if (continueYesOrNo.equals("yes")) {
                     continue;
@@ -93,7 +86,7 @@ public class RoundRobin_Main {
     }
 
 
-    public static void questionList(FileInputStream file1) {
+    public static void populateQuestionList(FileInputStream file1) {
         Random rand1 = new Random();
 
         Scanner scanner = new Scanner(file1);
@@ -108,7 +101,7 @@ public class RoundRobin_Main {
 
         for (int i = 0; i < interviewQuestions.size(); i++) {
             wholeQuestionsWithSolutionList.add(new QuestionAndSolution((i + 1)));
-            wholeQuestionsWithSolutionList.get(i).questionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("]") + 2, interviewQuestions.get(i).indexOf("-"));//CHANGE
+            wholeQuestionsWithSolutionList.get(i).questionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("]") + 2, interviewQuestions.get(i).indexOf("-"));
             wholeQuestionsWithSolutionList.get(i).solutionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("-") + 2);
             wholeQuestionsWithSolutionList.get(i).time = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("min.") - 2, interviewQuestions.get(i).indexOf("min."));
             wholeQuestionsWithSolutionList.get(i).topic = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("[") + 1, interviewQuestions.get(i).indexOf("]"));

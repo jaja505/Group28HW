@@ -7,7 +7,7 @@ public class QuestionAndSolution {
     variables: isSolvedCount, time, topic, solution
 
      */
-    public int isSolvedCount;
+    public int isSolvedCount = 0;
     public int numberOfQuestion;
     public String questionPart, solutionPart;
     public String time;
