@@ -1,11 +1,15 @@
 package RoundRobin;
 
+import com.sun.xml.internal.ws.dump.LoggingDumpTube;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
+import javax.swing.text.Position;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -76,7 +80,7 @@ public class RoundRobin_Main {
 
                     int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
                     wholeQuestionsWithSolutionList.get(randInt).questionAnswered();
-                    questionWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart); // RUNS
+                    questionWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, "1 "); // RUNS
 
 
 //task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM!
@@ -160,21 +164,44 @@ public class RoundRobin_Main {
 
 
 
-    public static void questionWindowSetup(String str) throws InterruptedException {
+    public static void questionWindowSetup(String str, String time) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-
-        Dimension d = new Dimension(1200,500);
-        driver.manage().window().setSize(d);
+        WebDriver driver1 = new ChromeDriver();
 
 
+        Dimension d1 = new Dimension(1800,500);
+        driver1.manage().window().setSize(d1);
+        driver1.get("https://watsgucci.github.io/");// from a different project/repo. This is the github domain i created thats given to me from my github account!. HTML file is in watsgucci.github.io repo.
+        driver1.findElement(By.name("questionText")).sendKeys(str);
+        Thread.sleep(5000);
 
-        driver.get("https://watsgucci.github.io/");// from a different project/repo. This is the github domain i created thats given to me from my github account!. HTML file is in watsgucci.github.io repo.
-        driver.findElement(By.name("questionText")).sendKeys(str);
+        //=================================================================================
 
-        Thread.sleep(3000);
-        driver.close();
+        WebDriver driver2 = new ChromeDriver();
+        Dimension d2 = new Dimension(1200,500);
+        Point p2 = new Point(0,550);
+        driver2.manage().window().setPosition(p2);
+        driver2.manage().window().setSize(d2);
+        driver2.get("https://timer.onlineclock.net/");//goes to URL
+        Select dropDown = new Select(driver2.findElement(By.id("minutesSelect")));//FORM SOURCE CODE
+
+
+        dropDown.selectByVisibleText(time.concat("Minute"));
+
+        while (driver2.getCurrentUrl().equals("https://timer.onlineclock.net/")) {
+            driver2.getCurrentUrl();
+
+            if (driver2.getCurrentUrl().equals("https://timer.onlineclock.net/alarm.html")) {
+
+                driver2.close();
+                break;
+            }
+
+        }
+
+        driver1.close();
+        driver2.close();
 
     }
 
