@@ -66,8 +66,6 @@ public class RoundRobin_Main {
         if (typeOfGame == 1) {
 
 
-            boolean isNotOver = true;
-
             while (true) { //it will give player a random question and ask if he wants to keep playing
 
                 Random rand = new Random();
@@ -87,16 +85,19 @@ public class RoundRobin_Main {
                     }
                     // System.out.println(wholeQuestionsWithSolutionList.get(randInt).isSolvedCount);
 
-
-
-
+                    //Question and answer to be displayed after browsers .quit
                     System.out.println("=====================================================================================================");
 
+                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart);
+                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).solutionPart);
 
+                    System.out.println("=====================================================================================================");
                 }
+
+
+
                 if (wholeQuestionsWithSolutionList.isEmpty()) {
                     System.out.println("No more Questions. Thanks for playing");
-                    isNotOver = false;
                     break;
                 }
                 System.out.println(">>> Do you want to continue?");
@@ -184,30 +185,20 @@ public class RoundRobin_Main {
         driver2.get("https://timer.onlineclock.net/");//goes to URL
         Select dropDown = new Select(driver2.findElement(By.id("minutesSelect")));//FORM SOURCE CODE
 
-
         dropDown.selectByVisibleText(time.concat("Seconds (Test)"));
 
         while (driver2.getCurrentUrl().equals("https://timer.onlineclock.net/")) {
             driver2.getCurrentUrl();
 
             if (driver2.getCurrentUrl().equals("https://timer.onlineclock.net/alarm.html")) {
-
-                driver2.close();
+                driver2.quit();
                 break;
             }
 
         }
 
-
         driver2.quit();
         driver1.quit();
-
     }
 
-
-
-
 }
-
-
-
