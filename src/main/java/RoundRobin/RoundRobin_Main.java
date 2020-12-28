@@ -1,6 +1,5 @@
 package RoundRobin;
 
-import com.sun.xml.internal.ws.dump.LoggingDumpTube;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -9,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import javax.swing.text.Position;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -34,7 +32,7 @@ public class RoundRobin_Main {
 
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY
 
-
+//TASK - BRAINSTORM ON THE PEOPLE OBJECT AND HOW WE CAN USE PLAYERS IN THE GAME
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 /*
 @Liv
@@ -80,7 +78,7 @@ public class RoundRobin_Main {
 
                     int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
                     wholeQuestionsWithSolutionList.get(randInt).questionAnswered();
-                    questionWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, "1 "); // RUNS
+                    questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, "5 "); // RUNS
 
 
 //task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM!
@@ -101,10 +99,10 @@ public class RoundRobin_Main {
                     isNotOver = false;
                     break;
                 }
-                System.out.println("Do you want to continue? (yes or no)");
-
+                System.out.println(">>> Do you want to continue?");
+                System.out.print("Yes or No: ");
                 String continueYesOrNo = scan.next();
-                if (continueYesOrNo.equals("yes")) {
+                if (continueYesOrNo.equalsIgnoreCase("yes") || continueYesOrNo.equalsIgnoreCase("y") || continueYesOrNo.equalsIgnoreCase("1")) {
                     continue;
                 } else {
                     System.out.println("Thanks for playing!");
@@ -164,7 +162,7 @@ public class RoundRobin_Main {
 
 
 
-    public static void questionWindowSetup(String str, String time) throws InterruptedException {
+    public static void questionAndTimeWindowSetup(String str, String time) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver1 = new ChromeDriver();
@@ -179,7 +177,7 @@ public class RoundRobin_Main {
         //=================================================================================
 
         WebDriver driver2 = new ChromeDriver();
-        Dimension d2 = new Dimension(1200,500);
+        Dimension d2 = new Dimension(1800,500);
         Point p2 = new Point(0,550);
         driver2.manage().window().setPosition(p2);
         driver2.manage().window().setSize(d2);
@@ -187,7 +185,7 @@ public class RoundRobin_Main {
         Select dropDown = new Select(driver2.findElement(By.id("minutesSelect")));//FORM SOURCE CODE
 
 
-        dropDown.selectByVisibleText(time.concat("Minute"));
+        dropDown.selectByVisibleText(time.concat("Seconds (Test)"));
 
         while (driver2.getCurrentUrl().equals("https://timer.onlineclock.net/")) {
             driver2.getCurrentUrl();
@@ -200,8 +198,9 @@ public class RoundRobin_Main {
 
         }
 
-        driver1.close();
-        driver2.close();
+
+        driver2.quit();
+        driver1.quit();
 
     }
 
