@@ -18,6 +18,9 @@ import java.util.Scanner;
 /*
 1. Number of players needs to be asked
 2. What type of game did yu wanna play? Wild Card? Hot Seat(Time is subtracted)? Topic Based? Random Round Robin? Think of MORE STYLES
+3. MAKE TIMER AND QUESTION IN ONE WINDOW USING JAVA TIMER TO UPDATE THE TEXTBOX IN HTML.
+
+
 
 ==================
 First we throw out the question
@@ -76,7 +79,7 @@ public class RoundRobin_Main {
 
                     int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
                     wholeQuestionsWithSolutionList.get(randInt).questionAnswered();
-                    questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, "5 "); // RUNS
+                    questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, wholeQuestionsWithSolutionList.get(randInt).time); // RUNS
 
 
 //task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM!
@@ -184,8 +187,8 @@ public class RoundRobin_Main {
         driver2.manage().window().setSize(d2);
         driver2.get("https://timer.onlineclock.net/");//goes to URL
         Select dropDown = new Select(driver2.findElement(By.id("minutesSelect")));//FORM SOURCE CODE
-
-        dropDown.selectByVisibleText(time.concat("Seconds (Test)"));
+//WORK ON THE TIMER
+        dropDown.selectByVisibleText(time.concat("Minutes"));
 
         while (driver2.getCurrentUrl().equals("https://timer.onlineclock.net/")) {
             driver2.getCurrentUrl();
