@@ -35,14 +35,13 @@ public class RoundRobin_Main {
 
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY
 
-//TASK - BRAINSTORM ON THE PEOPLE OBJECT AND HOW WE CAN USE PLAYERS IN THE GAME
+    //TASK - BRAINSTORM ON THE PEOPLE OBJECT AND HOW WE CAN USE PLAYERS IN THE GAME
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 /*
 @Liv
         ArrayList<People> group = People.assembleGroup();
         System.out.println(group);
 */
-
 
 
         try {
@@ -62,6 +61,8 @@ public class RoundRobin_Main {
         System.out.println("What type of game do you want to play?");
         System.out.println("[1] Round Robin Style");
         System.out.println("[2] Topic Based Style");
+        //NEW GAME MODE 3 - SET THE TIME YOU WANT FOR EACH QUESTION...
+        //NEW GAME MODE 4 - HOT SEAT, ALL QUESTION TIMES ARE HALVED.
 
 
         int typeOfGame = scan.nextInt();
@@ -98,7 +99,6 @@ public class RoundRobin_Main {
                 }
 
 
-
                 if (wholeQuestionsWithSolutionList.isEmpty()) {
                     System.out.println("No more Questions. Thanks for playing");
                     break;
@@ -120,7 +120,7 @@ public class RoundRobin_Main {
 
 
     public static void populateQuestionList(FileInputStream file1) {
-        Random rand1 = new Random();
+
 
         Scanner scanner = new Scanner(file1);
 
@@ -165,14 +165,13 @@ public class RoundRobin_Main {
     }
 
 
-
     public static void questionAndTimeWindowSetup(String str, String time) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver1 = new ChromeDriver();
 
 
-        Dimension d1 = new Dimension(1800,500);
+        Dimension d1 = new Dimension(1800, 500);
         driver1.manage().window().setSize(d1);
         driver1.get("https://watsgucci.github.io/");// from a different project/repo. This is the github domain i created thats given to me from my github account!. HTML file is in watsgucci.github.io repo.
         driver1.findElement(By.name("questionText")).sendKeys(str);
@@ -181,8 +180,8 @@ public class RoundRobin_Main {
         //=================================================================================
 
         WebDriver driver2 = new ChromeDriver();
-        Dimension d2 = new Dimension(1800,500);
-        Point p2 = new Point(0,550);
+        Dimension d2 = new Dimension(1800, 500);
+        Point p2 = new Point(0, 550);
         driver2.manage().window().setPosition(p2);
         driver2.manage().window().setSize(d2);
         driver2.get("https://timer.onlineclock.net/");//goes to URL
