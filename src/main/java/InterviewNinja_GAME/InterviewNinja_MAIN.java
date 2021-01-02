@@ -147,64 +147,89 @@ public class InterviewNinja_MAIN {
 
         if (typeOfGame == 2) {
 
-            System.out.println("Select topic to be quizzed on");
-            System.out.println("[1] Soft Skills");
-            System.out.println("[2] Java");
-            System.out.println("[3] Selenium");
-            System.out.println("[4] Git & GitHub");
-            System.out.println("[5] Jira");
+            while (true) {
 
-            String topicSelection = scan.next();
-            Random rand2 = new Random();
+                System.out.println("Select topic to be quizzed on");
+                System.out.println("[1] Soft Skills");
+                System.out.println("[2] Java");
+                System.out.println("[3] Selenium");
+                System.out.println("[4] Git & GitHub");
+                System.out.println("[5] Jira");
 
-            ArrayList<QuestionAndSolution> topicQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
-            String topic = "";
+                String topicSelection = scan.next();
+                Random rand2 = new Random();
 
-
-            switch (topicSelection) {
-
-                case "1":
-                    topic = "SS";
-                    break;
-
-                case "2":
-                    topic = "Java";
-                    break;
-
-                case "3":
-                    topic = "Selenium";
-                    break;
-
-                case "4":
-                    topic = "GH";
-                    break;
-
-                case "5":
-                    topic = "Jira";
-                    break;
-
-            }
+                ArrayList<QuestionAndSolution> topicQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
+                String topic = "";
 
 
-            for (QuestionAndSolution each : wholeQuestionsWithSolutionList) { //To create an Array List based on Topic selection
-                if (each.topic.equals(topic)) {
-                    topicQuestionsWithSolutionList.add(each);
+                switch (topicSelection) {
+
+                    case "1":
+                        topic = "SS";
+                        break;
+
+                    case "2":
+                        topic = "Java";
+                        break;
+
+                    case "3":
+                        topic = "Selenium";
+                        break;
+
+                    case "4":
+                        topic = "GH";
+                        break;
+
+                    case "5":
+                        topic = "Jira";
+                        break;
+
                 }
 
+
+                for (QuestionAndSolution each : wholeQuestionsWithSolutionList) { //To create an Array List based on Topic selection
+                    if (each.topic.equals(topic)) {
+                        topicQuestionsWithSolutionList.add(each);
+                    }
+
+                }
+
+
+                for (int i = 0; i < 1; i++) {
+                    int randTopic = rand2.nextInt(topicQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "randTopic"
+                    topicQuestionsWithSolutionList.get(randTopic).questionAnswered();
+                    questionAndTimeWindowSetup(topicQuestionsWithSolutionList.get(randTopic).questionPart, topicQuestionsWithSolutionList.get(randTopic).time);
+
+
+                    if (topicQuestionsWithSolutionList.get(randTopic).isSolvedCount > 1) {
+                        topicQuestionsWithSolutionList.remove(topicQuestionsWithSolutionList.get(randTopic));
+                    }
+
+                    System.out.println("=====================================================================================================");
+
+                    System.out.println(topicQuestionsWithSolutionList.get(randTopic).questionPart);//prints the question
+                    System.out.println(topicQuestionsWithSolutionList.get(randTopic).solutionPart);//prints out the solution
+//**********FIGURE OUT HOW TO BREAK UP THE SOLUTION INTO NUMEROUS LINES.
+                    System.out.println("=====================================================================================================");
+                }
+
+                if (wholeQuestionsWithSolutionList.isEmpty()) {
+                    System.out.println("No more Questions. Thanks for playing");
+                    break;
+                }
+                System.out.println(">>> Do you want to continue?");
+                System.out.print("Yes or No: ");
+                String continueYesOrNo = scan.next();
+                if (continueYesOrNo.equalsIgnoreCase("yes") || continueYesOrNo.equalsIgnoreCase("y") || continueYesOrNo.equalsIgnoreCase("1")) {
+                    continue;
+                } else {
+                    System.out.println("Thanks for playing!");
+                    break;
+                }
+
+
             }
-//            for(QuestionAndSolution each:topicQuestionsWithSolutionList) {
-//                System.out.println(each.questionPart);
-//            }
-
-
-            for (int i = 0; i < 1; i++) {
-                int randTopic = rand2.nextInt(topicQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "randTopic"
-
-            }
-
-
-
-
         }
 
     }
