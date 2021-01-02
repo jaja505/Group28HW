@@ -148,7 +148,8 @@ public class InterviewNinja_MAIN {
         if (typeOfGame == 2) {
 
             while (true) {
-
+                System.out.println("================================================================================");
+                System.out.println("WELCOME TO INTERVIEW NINJA - TOPIC!");
                 System.out.println("Select topic to be quizzed on");
                 System.out.println("[1] Soft Skills");
                 System.out.println("[2] Java");
@@ -156,7 +157,7 @@ public class InterviewNinja_MAIN {
                 System.out.println("[4] Git & GitHub");
                 System.out.println("[5] Jira");
 
-                String topicSelection = scan.next();
+                String topicSelection = scan.next();//SELECT USER INPUt OF STYLE
                 Random rand2 = new Random();
 
                 ArrayList<QuestionAndSolution> topicQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
@@ -195,7 +196,7 @@ public class InterviewNinja_MAIN {
 
                 }
 
-                for (int j = 0; j <= topicQuestionsWithSolutionList.size(); j++) { //run a loop based on the Array List size
+                for (int j = 0; j < topicQuestionsWithSolutionList.size(); j++) { //run a loop based on the Array List size
 
                     for (int i = 0; i < 1; i++) {
                         int randTopic = rand2.nextInt(topicQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "randTopic"
@@ -220,8 +221,8 @@ public class InterviewNinja_MAIN {
 
                 if (topicQuestionsWithSolutionList.isEmpty()) {
 
-                    System.out.println("No more Questions in this Topic poll");
-                    System.out.println(">>> Do you want to continue?");
+                    System.out.println("No more Questions for this topic left in the ArrayList");
+                    System.out.println(">>> Do you want to try a different topic?");
                     System.out.print("Yes or No: ");
                     String continueYesOrNo = scan.next();
 
