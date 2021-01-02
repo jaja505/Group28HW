@@ -31,7 +31,7 @@ Then it will ask the user if they want to continue??WORK ON THIS PART
 
  */
 
-public class RoundRobin_Main {
+public class InterviewNinja_MAIN {
 
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY
 
