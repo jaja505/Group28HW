@@ -43,7 +43,7 @@ public class QuestionAndSolution {
 
     @Override
     public String toString() {
-        return numberOfQuestion +
+        return questionPart +"\n"+
                 " isSolvedCount=" + isSolvedCount +
                 ", numberOfQuestion='" + numberOfQuestion + '\'' +
                 '}';

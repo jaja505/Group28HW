@@ -1,5 +1,9 @@
 package InterviewNinja_GAME;
 
+/*
+@Authors: Daniel Vanshtein and Steph Galvez and ....
+ */
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -45,7 +49,7 @@ public class InterviewNinja_MAIN {
 
 
         try {
-            FileInputStream file1 = new FileInputStream("src/main/java/RoundRobin/Questions.txt");
+            FileInputStream file1 = new FileInputStream("src/main/java/InterviewNinja_GAME/Questions.txt");
             populateQuestionList(file1); // method to print the question
         } catch (FileNotFoundException e) {
             System.err.println("File path is wrong dude, Go To File1 and Change its path! I wont Load the questions till you change it");
@@ -55,14 +59,32 @@ public class InterviewNinja_MAIN {
 
         Scanner scan = new Scanner(System.in);
 
+        /* Commented out the players
         System.out.println("How many players?");
         int players = scan.nextInt();
+        */
 
-        System.out.println("What type of game do you want to play?");
-        System.out.println("[1] Round Robin Style");
-        System.out.println("[2] Topic Based Style");
-        //NEW GAME MODE 3 - SET THE TIME YOU WANT FOR EACH QUESTION...
-        //NEW GAME MODE 4 - HOT SEAT, ALL QUESTION TIMES ARE HALVED.
+        System.out.println("What style of INTERVIEW NINJA do you want to play?");
+        //=========================================================
+        System.out.println("[1] Round Robin Style - Multiplayer");
+        /*
+        Gets a random question from the Questions.txt and sets a timer for it.
+        Goes until list is finished and each question can only be asked 2 times
+         */
+        //=========================================================
+        System.out.println("[2] Topic Based Style - Multiplayer");
+        /*
+        1. Present user with a menu of topics
+        2. Need to ask user what topic he would like to play...
+        3. Game takes every question with that topic and adds it to an ArrayList
+        4. Runs the randomQuestion generator...Questions are limited to being shown only 1 time!
+        5.
+
+         */
+
+
+        //NEW GAME MODE 3 (single player)- SET THE TIME YOU WANT..and that sets the time FOR all the QUESTION...
+        //NEW GAME MODE 4 (multiplayer) - HOT SEAT, ALL QUESTION TIMES ARE HALVED.
 
 
         int typeOfGame = scan.nextInt();
@@ -92,9 +114,9 @@ public class InterviewNinja_MAIN {
                     //Question and answer to be displayed after browsers .quit
                     System.out.println("=====================================================================================================");
 
-                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart);
-                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).solutionPart);
-
+                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart);//prints the question
+                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).solutionPart);//prints out the solution
+//**********FIGURE OUT HOW TO BREAK UP THE SOLUTION INTO NUMEROUS LINES.
                     System.out.println("=====================================================================================================");
                 }
 
@@ -189,6 +211,7 @@ public class InterviewNinja_MAIN {
 //WORK ON THE TIMER
         dropDown.selectByVisibleText(time.concat("Minutes"));
 
+        //ADD TO LOOP A BUTTON IN HTML THAT WILL HELP US CLOSE THE BROWSERS IF THE PERSON ANSWERS THE QUESTION EARLIER THAN TIMER.
         while (driver2.getCurrentUrl().equals("https://timer.onlineclock.net/")) {
             driver2.getCurrentUrl();
 
