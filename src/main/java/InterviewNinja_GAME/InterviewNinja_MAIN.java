@@ -14,9 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.lang.invoke.SwitchPoint;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -188,17 +186,24 @@ public class InterviewNinja_MAIN {
             }
 
 
-            for (QuestionAndSolution each : wholeQuestionsWithSolutionList) //To create an Array List based on Topic selection
-                if (each.topic.equals(topicSelection)) {
+            for (QuestionAndSolution each : wholeQuestionsWithSolutionList) { //To create an Array List based on Topic selection
+                if (each.topic.equals(topic)) {
                     topicQuestionsWithSolutionList.add(each);
                 }
 
-            System.out.println(topicQuestionsWithSolutionList);
+            }
+//            for(QuestionAndSolution each:topicQuestionsWithSolutionList) {
+//                System.out.println(each.questionPart);
+//            }
 
-            //for (int i = 0; i < 1; i++) {
-              //  int randTopic = rand2.nextInt(topicQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "randTopic"
 
-            //}
+            for (int i = 0; i < 1; i++) {
+                int randTopic = rand2.nextInt(topicQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "randTopic"
+
+            }
+
+
+
 
         }
 
