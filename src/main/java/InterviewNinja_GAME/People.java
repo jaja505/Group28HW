@@ -1,4 +1,4 @@
-package RoundRobin;
+package InterviewNinja_GAME;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

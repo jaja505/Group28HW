@@ -1,4 +1,4 @@
-package RoundRobin;
+package InterviewNinja_GAME;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -35,7 +35,7 @@ public class RoundRobin_Main {
 
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY
 
-    //TASK - BRAINSTORM ON THE PEOPLE OBJECT AND HOW WE CAN USE PLAYERS IN THE GAME
+
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 /*
 @Liv

@@ -1,4 +1,4 @@
-package RoundRobin;
+package InterviewNinja_GAME;
 
 public class QuestionAndSolution {
 
