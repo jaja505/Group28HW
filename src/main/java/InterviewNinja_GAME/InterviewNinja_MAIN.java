@@ -14,7 +14,9 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.lang.invoke.SwitchPoint;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -95,7 +97,7 @@ public class InterviewNinja_MAIN {
             while (true) { //it will give player a random question and ask if he wants to keep playing
 
                 Random rand = new Random();
-                ArrayList<QuestionAndSolution> tempQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
+                //ArrayList<QuestionAndSolution> tempQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
 
 
                 for (int i = 0; i < 1; i++) {//Controls how many questions are printed out
@@ -137,6 +139,60 @@ public class InterviewNinja_MAIN {
             }
         }
 
+        if (typeOfGame == 2) {
+
+            System.out.println("Select topic to be quizzed on");
+            System.out.println("[1] Soft Skills");
+            System.out.println("[2] Java");
+            System.out.println("[3] Selenium");
+            System.out.println("[4] Git & GitHub");
+            System.out.println("[5] Jira");
+
+            String topicSelection = scan.next();
+            Random rand2 = new Random();
+
+            ArrayList<QuestionAndSolution> topicQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
+            String topic = "";
+
+
+            switch (topicSelection) {
+
+                case "1":
+                    topic = "SS";
+                    break;
+
+                case "2":
+                    topic = "Java";
+                    break;
+
+                case "3":
+                    topic = "Selenium";
+                    break;
+
+                case "4":
+                    topic = "GH";
+                    break;
+
+                case "5":
+                    topic = "Jira";
+                    break;
+
+            }
+
+
+            for (QuestionAndSolution each : wholeQuestionsWithSolutionList) //To create an Array List based on Topic selection
+                if (each.topic.equals(topicSelection)) {
+                    topicQuestionsWithSolutionList.add(each);
+                }
+
+            System.out.println(topicQuestionsWithSolutionList);
+
+            //for (int i = 0; i < 1; i++) {
+              //  int randTopic = rand2.nextInt(topicQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "randTopic"
+
+            //}
+
+        }
 
     }
 

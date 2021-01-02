@@ -42,7 +42,7 @@
 [Selenium] 42. Can you mention the differences between maven & selenium? (3 min.) - Solution:
 [Selenium] 43. What is a WebDriver? (2 min.) - Solution:
 [Selenium] 44. What is the folder structure when creating a project in maven? (2 min.) - Solution:
-[Selenium] 45. What is XPath in Selenium? (2 min.) - XPath in Selenium is an XML path used for navigation through the HTML structure of the page. It is a syntax or language for finding any element on a web page using XML path expression. XPath can be used for both HTML and XML documents to find the location of any element on a webpage using HTML DOM structure.
+[Selenium] 45. What is XPath in Selenium? (2 min.) - Solution: XPath in Selenium is an XML path used for navigation through the HTML structure of the page. It is a syntax or language for finding any element on a web page using XML path expression. XPath can be used for both HTML and XML documents to find the location of any element on a webpage using HTML DOM structure.
 [SS] 45. What did you talk about in your last retro meeting? Give an Example Please... (5 min.) - Solution:
 [Java] 46. What is the difference between Default AccessMod and Protected AccessMod? (1 min.) - The solution is.....
 
