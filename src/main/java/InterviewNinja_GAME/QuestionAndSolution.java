@@ -9,6 +9,7 @@ public class QuestionAndSolution {
      */
     public int isSolvedCount = 0;
     public int numberOfQuestion;
+
     public String questionPart, solutionPart;
     public String time;
     public String topic;

@@ -198,46 +198,46 @@ public class InterviewNinja_MAIN {
 
                 for (int j = 0; j < topicQuestionsWithSolutionList.size(); j++) { //run a loop based on the Array List size
 
-                    for (int i = 0; i < 1; i++) {
-                        int randTopic = rand2.nextInt(topicQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "randTopic"
-                        topicQuestionsWithSolutionList.get(randTopic).questionAnswered();
-                        questionAndTimeWindowSetup(topicQuestionsWithSolutionList.get(randTopic).questionPart, topicQuestionsWithSolutionList.get(randTopic).time);
+
+                    int randTopic = rand2.nextInt(topicQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "randTopic"
+                    topicQuestionsWithSolutionList.get(randTopic).questionAnswered();
+                    questionAndTimeWindowSetup(topicQuestionsWithSolutionList.get(randTopic).questionPart, topicQuestionsWithSolutionList.get(randTopic).time);
 
 
-                        if (topicQuestionsWithSolutionList.get(randTopic).isSolvedCount >= 1) {
-                            topicQuestionsWithSolutionList.remove(topicQuestionsWithSolutionList.get(randTopic));
-                        }
+                    System.out.println("=====================================================================================================");
 
-                        System.out.println("=====================================================================================================");
-
-                        System.out.println(topicQuestionsWithSolutionList.get(randTopic).questionPart);//prints the question
-                        System.out.println(topicQuestionsWithSolutionList.get(randTopic).solutionPart);//prints out the solution
+                    System.out.println(topicQuestionsWithSolutionList.get(randTopic).questionPart);//prints the question
+                    System.out.println(topicQuestionsWithSolutionList.get(randTopic).solutionPart);//prints out the solution
 //**********FIGURE OUT HOW TO BREAK UP THE SOLUTION INTO NUMEROUS LINES.
-                        System.out.println("=====================================================================================================");
+                    System.out.println("=====================================================================================================");
 
+                    if (topicQuestionsWithSolutionList.get(randTopic).isSolvedCount >= 1) {
+                        topicQuestionsWithSolutionList.remove(topicQuestionsWithSolutionList.get(randTopic));
+                        j--;
                     }
 
-                }
 
-                if (topicQuestionsWithSolutionList.isEmpty()) {
+                }
+                //MAKE PROMPT HERE FOR INCORRECT INPUT FROM USER!
+
+                if (topicQuestionsWithSolutionList.isEmpty() ) {//add condition so it doesnt prompt when user has wrong input in Topic Selection
 
                     System.out.println("No more Questions for this topic left in the ArrayList");
                     System.out.println(">>> Do you want to try a different topic?");
                     System.out.print("Yes or No: ");
                     String continueYesOrNo = scan.next();
-
                     if (continueYesOrNo.equalsIgnoreCase("yes") || continueYesOrNo.equalsIgnoreCase("y") || continueYesOrNo.equalsIgnoreCase("1")) {
                         continue;
                     } else {
                         System.out.println("Thanks for playing!");
                         break;
                     }
+
                 }
 
             }
 
         }
-
 
     }
 
