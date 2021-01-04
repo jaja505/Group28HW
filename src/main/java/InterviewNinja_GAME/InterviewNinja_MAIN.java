@@ -111,7 +111,7 @@ public class InterviewNinja_MAIN {
                     int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
                     wholeQuestionsWithSolutionList.get(randInt).questionAnswered();
                     questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, wholeQuestionsWithSolutionList.get(randInt).time); // RUNS
-
+              //****//Make it come out with a typeWriter effect, use a diff method with an, arrayList, for loop and sleep..make the sum of the milliseconds open the second window
 
 //task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM!
                     if (wholeQuestionsWithSolutionList.get(randInt).isSolvedCount >= 2) {
@@ -146,11 +146,11 @@ public class InterviewNinja_MAIN {
         }
 
         if (typeOfGame == 2) {
-
+            System.out.println("================================================================================");
+            System.out.println("WELCOME TO INTERVIEW NINJA - TOPIC!");
             while (true) {
-                System.out.println("================================================================================");
-                System.out.println("WELCOME TO INTERVIEW NINJA - TOPIC!");
-                System.out.println("Select topic to be quizzed on");
+
+                System.out.println("Select topic to be quizzed on:");
                 System.out.println("[1] Soft Skills");
                 System.out.println("[2] Java");
                 System.out.println("[3] Selenium");
@@ -314,6 +314,7 @@ public class InterviewNinja_MAIN {
         dropDown.selectByVisibleText(time.concat("Minutes"));
 
         //ADD TO LOOP A BUTTON IN HTML THAT WILL HELP US CLOSE THE BROWSERS IF THE PERSON ANSWERS THE QUESTION EARLIER THAN TIMER.
+        //OR MAYBE TEXT IN THE INPUT FIELD FOR IT TO DETECT A STOP
         while (driver2.getCurrentUrl().equals("https://timer.onlineclock.net/")) {
             driver2.getCurrentUrl();
 
