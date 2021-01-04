@@ -24,24 +24,25 @@
 [Java] 24. Can you explain how to Concat two arrays? (technical question) (2 min.) - Solution:
 [Java] 25. Can you explain how to create a custom method that returns odd numbers? (technical question) (2 min.) - Solution:
 [GH] 26. What is GitHub? (2 min.) - Solution: GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-[GH] 27. What is a repository? (2 min.) - Solution:
-[GH] 28. What are some Git commands? (2 min.) - Solution:
+[GH] 27. What is a repository? (2 min.) - Solution: Its a "cloud" where the project can be stored and worked on. There is a local repository which is on the ground level, and then there is a remote repo(aka Origin) that is in the sky cloud on Github.com. We pull FROM the sky to the ground and push FROM the ground TO the sky.
+[GH] 28. What are some Git commands? (2 min.) - Solution: Pull, Commit, Push
 [GH] 29. What is Remote & Local Repository? (2 min.) - Solution:
-[Jira] 30. How do you automate User Stories from Jira? (3 min.) - Solution:
-[SS] 31. What is Boundary Value Analyze (BVA) (2 min.) - Solution:
-[Jira] 32.What is a bug and How do you create a bug ticket? (3 min.) - Solution:
-[SS] 33. What is a Test Case? (2 min.) - Solution:
-[Java] 34. Can you explain the different types of Access Modifiers? (3 min.) - Solution:
-[Java] 35. What does OOP stands for? (2 min.) - Solution:
-[Java] 36. What are the 4 principles of OOP? (2 min.) - Solution:
-[Java] 37. What is the concept of Encapsulation? (2 min.) - Solution:
-[Java] 38. What is the concept of Inheritance? (2 min.) - Solution:
-[Selenium] 39. What is Selenium and how does it works? (3 min.) - Solution:
-[Selenium] 40. What pom.xml stands for? (2 min.) - Solution:
-[Selenium] 41. What is build? (2 min.) - Solution:
-[Selenium] 42. Can you mention the differences between maven & selenium? (3 min.) - Solution:
-[Selenium] 43. What is a WebDriver? (2 min.) - Solution:
-[Selenium] 44. What is the folder structure when creating a project in maven? (2 min.) - Solution:
-[Selenium] 45. What is XPath in Selenium? (2 min.) - Solution: XPath in Selenium is an XML path used for navigation through the HTML structure of the page. It is a syntax or language for finding any element on a web page using XML path expression. XPath can be used for both HTML and XML documents to find the location of any element on a webpage using HTML DOM structure.
-[SS] 45. What did you talk about in your last retro meeting? Give an Example Please... (5 min.) - Solution:
-[Java] 46. What is the difference between Default AccessMod and Protected AccessMod? (1 min.) - The solution is.....
+[Jira] 30. How do you automate User Stories from Jira? (3 min.) - Solution: User Story -> AC -> Test Case(Manual and/or Automated) -> Test Execution
+[SS] 31. What is Boundary Value Analyze (BVA) (2 min.) - Solution: NOOOOOOOOOOOOOOO. Im not answering this for the 100th time
+[Jira] 32.What is a bug and How do you create a bug ticket? (3 min.) - Solution: A bug is a defect found while doing a test execution. It can be reported through the comments of the specific step in the test execution or a Bug issue can be created on Jira linked to that specific step of the test execution
+[SS] 33. What is a Test Case? (2 min.) - Solution: It is a document that explains the steps needed to manually or automatically test the Acceptance Criteria.
+[Java] 34. Can you explain the different types of Access Modifiers? (3 min.) - Solution: Public(Global/Project Visibility), Protected(Package and Subclass Visibility), Default(Package Visibility), Private(Class Visibility)
+[Java] 35. What does OOP stands for? (2 min.) - Solution: Object oriented programming
+[Java] 36. What are the 4 principles of OOP? (2 min.) - Solution: Encapsulation, Inheritance, Abstraction, Polymorphism
+[Java] 37. What is the concept of Encapsulation? (2 min.) - Solution: This is one of the concepts of OOP and it allows us to hide the name of the variable. We set the variables we want hidden to have a private AccessMod and then create getter() and setter() methods to set and retrieve the values of those private variables....but it doesnt mean we reveal what the variables actually stand for.
+[Java] 38. What is the concept of Inheritance? (2 min.) - Solution: Inheritance is one of the concepts of OOP and it is a "relationship" between classes. When a class inherits another class it is saying it has an "IS A" relationship with that class(Superclass to Subclass / Parent to Child). It is the fastest way to make a class rich. If you want to invoke the methods or variables of the SuperClass then you have to use the keyword |super.| or |super()| as opposed to |this.| or |this()|. Syntax: public class Honda extends Car{.
+[Selenium] 39. What is Selenium and how does it works? (3 min.) - Solution:  Selenium is a portable framework for testing web applications. Primarily it is for automating web applications for testing purposes, SELENIUM AUTOMATES BROWSERS...THAT'S IT! Helps us drive a browser they way we want to drive it.
+[Selenium] 40. What does pom.xml stand for? (2 min.) - Solution: Project Object Model. It is the fundamental unit of work in Maven. It is an XML file that contains information about the project and configuration details used by Maven to build the project. It contains default values for most projects. Like the test directory which is: src->test->java. When executing a task or goal, Maven looks for the POM in the current directory. It reads the POM, gets the needed config. info, then executes the goal.
+[Selenium] 41. What is build? (2 min.) - Solution: A build is numerous automated processes that are created and ran to execute repeated commands. There are 3 build lifecycles in Maven: default, clean and site. They all facilitate in running your Java code. The DEFAULT lifecycle handles your project deployment, the CLEAN lifecycle handles project cleaning, while the SITE lifecycle handles the creation of your project's site documentation.
+[Selenium] 42. Can you mention the differences between maven & selenium? (3 min.) - Solution: Maven is a build and Selenium is a collection of libraries
+[Selenium] 43. What is a WebDriver? (2 min.) - Solution: It is a subclass of selenium libraries/superClass that allows us to open a browser by creating a new webDriver object (usually named Driver)
+[Selenium] 44. What is the folder structure when creating a project in maven? (2 min.) - Solution: SRC --> Test --> Java --> ToYourCustomDirectory
+[Selenium] 45. What is XPath in Selenium? (2 min.) - Solution: XPath in Selenium is an XML path used for navigation through the HTML structure of the page. It is a syntax or language for finding any element on a web page using XML path expression. XPath can be used for both HTML and XML documents to find the location of any element on a webpage using HTML DOM structure
+[SS] 45. What did you talk about in your last retro meeting? Give an Example Please... (5 min.) - Solution: What went well during the last sprint / What didnt go well during the last sprint / How can we improve for the next sprint
+[Java] 46. What is the difference between Default AccessMod and Protected AccessMod? (1 min.) - Solution: Protected can be visible in subClasses and anywhere in the package. Default can only be visible in the same package and NOT in subclasses.
+
