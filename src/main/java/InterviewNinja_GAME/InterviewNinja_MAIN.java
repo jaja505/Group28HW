@@ -226,6 +226,7 @@ public class InterviewNinja_MAIN {
                     System.out.println(">>> Do you want to try a different topic?");
                     System.out.print("Yes or No: ");
                     String continueYesOrNo = scan.next();
+
                     if (continueYesOrNo.equalsIgnoreCase("yes") || continueYesOrNo.equalsIgnoreCase("y") || continueYesOrNo.equalsIgnoreCase("1")) {
                         continue;
                     } else {
