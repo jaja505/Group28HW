@@ -262,7 +262,7 @@ public class InterviewNinja_MAIN {
             wholeQuestionsWithSolutionList.get(i).solutionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("-") + 2);
             wholeQuestionsWithSolutionList.get(i).time = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("min.") - 2, interviewQuestions.get(i).indexOf("min."));
             wholeQuestionsWithSolutionList.get(i).topic = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("[") + 1, interviewQuestions.get(i).indexOf("]"));
-
+        //MAKE SURE IF YOU ADD QUESTIONS THAT YOU PUT THE CORRECT FORMAT IN THE QUESTIONS.TXT...or else it will bug and say out of bounds if it cant find one of these instance variables.
 
         }
 
@@ -315,13 +315,18 @@ public class InterviewNinja_MAIN {
 
         //ADD TO LOOP A BUTTON IN HTML THAT WILL HELP US CLOSE THE BROWSERS IF THE PERSON ANSWERS THE QUESTION EARLIER THAN TIMER.
         //OR MAYBE TEXT IN THE INPUT FIELD FOR IT TO DETECT A STOP
+
+        //Still Working... to Good Job! Closing Browsers Now... // ELEMENT = ""
+
+
         while (driver2.getCurrentUrl().equals("https://timer.onlineclock.net/")) {
             driver2.getCurrentUrl();
 
-            if (driver2.getCurrentUrl().equals("https://timer.onlineclock.net/alarm.html")) {
+            if (driver2.getCurrentUrl().equals("https://timer.onlineclock.net/alarm.html") || driver1.findElement(By.xpath("//div[@id='myDIV']")).getText().contains("Good")) {
                 driver2.quit();
                 break;
             }
+
 
         }
 

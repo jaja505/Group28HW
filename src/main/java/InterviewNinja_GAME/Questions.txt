@@ -45,4 +45,4 @@
 [Selenium] 45. What is XPath in Selenium? (2 min.) - Solution: XPath in Selenium is an XML path used for navigation through the HTML structure of the page. It is a syntax or language for finding any element on a web page using XML path expression. XPath can be used for both HTML and XML documents to find the location of any element on a webpage using HTML DOM structure
 [SS] 45. What did you talk about in your last retro meeting? Give an Example Please... (5 min.) - Solution: What went well during the last sprint / What didnt go well during the last sprint / How can we improve for the next sprint
 [Java] 46. What is the difference between Default AccessMod and Protected AccessMod? (1 min.) - Solution: Protected can be visible in subClasses and anywhere in the package. Default can only be visible in the same package and NOT in subclasses.
-
+[Selenium] 47. How many different types of XPATh locators are there? (1 min.) - Solution:
