@@ -298,19 +298,34 @@ public class InterviewNinja_MAIN {
         Dimension d1 = new Dimension(1800, 500);
         driver1.manage().window().setSize(d1);
         driver1.get("https://watsgucci.github.io/");// from a different project/repo. This is the github domain i created thats given to me from my github account!. HTML file is in watsgucci.github.io repo.
-        driver1.findElement(By.name("questionText")).sendKeys(str);
-        Thread.sleep(5000);
 
         //=================================================================================
+        //TYPEWRITER STARTS
+        //=================================================================================
+        for(int i=0; i<str.length();i++){
+            String eachChar = str.charAt(i)+"";
+            driver1.findElement(By.name("questionText")).sendKeys((eachChar));
+            try {
+                Thread.sleep(150);
+            } catch (InterruptedException e) {
+                System.out.println("Sleep interrupted doodoo head"+ e.getMessage());
+            }
+        }
 
+        //=================================================================================
+        //driver2 (timer) is initiated
+        //=================================================================================
         WebDriver driver2 = new ChromeDriver();
         Dimension d2 = new Dimension(1800, 500);
         Point p2 = new Point(0, 550);
         driver2.manage().window().setPosition(p2);
         driver2.manage().window().setSize(d2);
         driver2.get("https://timer.onlineclock.net/");//goes to URL
+
+//*********FIX FOR 1 MINUTE!!!!!!
+
         Select dropDown = new Select(driver2.findElement(By.id("minutesSelect")));//FORM SOURCE CODE
-//WORK ON THE TIMER
+        //WORK ON THE TIMER
         dropDown.selectByVisibleText(time.concat("Minutes"));
 
         //ADD TO LOOP A BUTTON IN HTML THAT WILL HELP US CLOSE THE BROWSERS IF THE PERSON ANSWERS THE QUESTION EARLIER THAN TIMER.
@@ -333,5 +348,24 @@ public class InterviewNinja_MAIN {
         driver2.quit();
         driver1.quit();
     }
+
+
+    public static void typeWriter(String word1){
+        for(int i=0; i<word1.length();i++){
+            String eachChar = word1.charAt(i)+"";
+            System.out.print(eachChar);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.out.println("Sleep interrupted doodoo head"+ e.getMessage());
+            }
+
+        }
+
+
+    }
+
+
+
 
 }
