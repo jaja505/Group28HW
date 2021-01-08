@@ -47,3 +47,6 @@
 [Java] 46. What is the difference between Default AccessMod and Protected AccessMod? (1 min.) - Solution: Protected can be visible in subClasses and anywhere in the package. Default can only be visible in the same package and NOT in subclasses.
 [Selenium] 47. How many different types of XPATh locators are there? (1 min.) - Solution:
 [Java] 48. What is the difference between checked and unchecked Exception? (2 min.) - Solution:
+[Java] 49. What is 508 testing? (2 min) - Solution:
+[SS] 50. How many environments are there? (1 min) - Solution:
+[SS] 51. Which part of the regression test should be automated? (3 min.) - Solution: tests which are stable,  repeated frequently, simple and required no tester input  are good candidates for automation (edited)

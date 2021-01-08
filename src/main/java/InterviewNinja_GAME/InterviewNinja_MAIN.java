@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -49,6 +50,8 @@ public class InterviewNinja_MAIN {
                 "██║██║░╚███║░░░██║░░░███████╗██║░░██║░░╚██╔╝░░██║███████╗░░╚██╔╝░╚██╔╝░  ██║░╚███║██║██║░╚███║╚█████╔╝██║░░██║\n" +
                 "╚═╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝╚══════╝░░░╚═╝░░░╚═╝░░  ╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝");
         System.out.println("_________________________________________________________________________________________________________________");
+
+
         System.out.println("What style of INTERVIEW NINJA do you want to play?");
 
         //=========================================================
@@ -81,7 +84,7 @@ public class InterviewNinja_MAIN {
 
         if (typeOfGame == 1) {
 
-
+            roundRobin:
             while (true) { //it will give player a random question and ask if he wants to keep playing
 
                 Random rand = new Random();
@@ -106,21 +109,23 @@ public class InterviewNinja_MAIN {
 
                     System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart);//prints the question
                     System.out.println(wholeQuestionsWithSolutionList.get(randInt).solutionPart);//prints out the solution
-//**********FIGURE OUT HOW TO BREAK UP THE SOLUTION INTO NUMEROUS LINES.
+                    //***WRAP TEXT IN THE CONSOLE TO MAKE SOLUTIONS INTO MULTIPLE LINES INSTEAD OF A LONG RUNNING LINE
                     System.out.println("=====================================================================================================");
                 }
 
 
                 if (wholeQuestionsWithSolutionList.isEmpty()) {
-                    System.out.println("No more Questions. Thanks for playing");
+                    System.out.println(">̶ No more Questions. Thanks for playing");
                     break;
                 }
-                System.out.println(">>> Do you want to continue?");
+                System.out.println(">̶ Do you want to continue?");
                 System.out.print("Yes or No: ");
                 String continueYesOrNo = scan.next();
+                continueYesOrNo = continueYesOrNo.toLowerCase();
+                //***NEED TO DO MORE FORMATTING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 if (continueYesOrNo.equalsIgnoreCase("yes") || continueYesOrNo.equalsIgnoreCase("y") || continueYesOrNo.equalsIgnoreCase("1")) {
-                    continue;
-                } else {
+                    continue roundRobin;
+                } else if(continueYesOrNo.contains("no") || continueYesOrNo.contains("n")) {
                     System.out.println("Thanks for playing!");
                     break;
                 }
@@ -208,8 +213,8 @@ public class InterviewNinja_MAIN {
 
                 if (topicQuestionsWithSolutionList.isEmpty()) {//add condition so it doesnt prompt when user has wrong input in Topic Selection
 
-                    System.out.println("No more Questions for this topic left in the ArrayList");
-                    System.out.println(">>> Do you want to try a different topic?");
+                    System.out.println(">̶ No more Questions for this topic left in the ArrayList");
+                    System.out.println(">̶ Do you want to try a different topic?");
                     System.out.print("Yes or No: ");
                     String continueYesOrNo = scan.next();
 
