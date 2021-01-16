@@ -67,5 +67,6 @@
 [Java] 66. What is 508 testing? (2 min.) - Solution:
 [SS] 67. How many environments are there? (1 min.) - Solution:
 [SS] 68. Which part of the regression test should be automated? (3 min.) - Solution: tests which are stable,  repeated frequently, simple and required no tester input  are good candidates for automation (edited)
-[Java] 69. What is the abstract concept in OOP and why do we use it? Give one example please (2 min.) - Solution:
+[Java] 69. What is the abstract concept in OOP and why do we use it? Give one example please (2 min.) - Solution: Abstract classes help us organize what all the subclasses SHOULD have/do
 [Java] 70. What is the difference between Interface and Abstraction? How are each created? What methods cannot be abstract/interfaced? (3 min.) - Solution:
+

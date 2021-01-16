@@ -1,8 +1,10 @@
 package InterviewNinja_GAME;
 
 /*
-@Authors: Daniel Vanshtein and Steph Galvez and Livio
+@Authors: Daniel Vanshtein and Steph Galvez
  */
+
+//EXPECTED RELEASE DATE: 02/01/21**********************
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -23,7 +25,13 @@ import java.util.Scanner;
 
 public class InterviewNinja_MAIN {
 
+
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY
+/*
+ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WIL LGO.
+So in RoundRobin, if there are 5 players, we want to enter everyones names and then prompt the name later in the game when its that
+person's turn.
+ */
 
 
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
@@ -54,14 +62,16 @@ public class InterviewNinja_MAIN {
 
         System.out.println("What style of INTERVIEW NINJA do you want to play?");
 
+        //*********************************************************
         //=========================================================
         System.out.println("\t[1] Round Robin Style - Multiplayer");
         /*
-        Gets a random question from the Questions.txt and sets a timer for it.
+        RoundRobin Explanation: Gets a random question from the Questions.txt and sets a timer for it.
         Goes until list is finished and each question can only be asked 2 times
          */
-
+        //*********************************************************
         //=========================================================
+
         System.out.println("\t[2] Topic Based Style - Multiplayer");
         /*
         1. Present user with a menu of topics
@@ -251,26 +261,6 @@ public class InterviewNinja_MAIN {
             //MAKE SURE IF YOU ADD QUESTIONS THAT YOU PUT THE CORRECT FORMAT IN THE QUESTIONS.TXT...or else it will bug and say out of bounds if it cant find one of these instance variables.
 
         }
-
-
-
-/*
-        ArrayList<String> tempInterviewQuestions = new ArrayList<>();
-
-        for (int i = 0; i < 1; i++) {//Controls how many questions are printed out
-            int randInt = rand1.nextInt(interviewQuestions.size());//initializing a random number using our RandomClass object "rand"
-            tempInterviewQuestions.add(interviewQuestions.get(randInt));//adds the element in the random index that it generated
-            interviewQuestions.remove(randInt);//removes the element that was just chosen.
-        }
-        System.out.println();
-
-        System.out.println("Today's questions are:");
-
-        for (int i = 0; i < tempInterviewQuestions.size(); i++) {
-            String each = tempInterviewQuestions.get(i);
-            System.out.println((i + 1) + " " + each + " ");
-        }
-*/
 
     }
 
