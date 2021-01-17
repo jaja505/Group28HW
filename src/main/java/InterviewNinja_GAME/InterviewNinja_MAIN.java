@@ -24,6 +24,7 @@ import java.util.Scanner;
 
 public class InterviewNinja_MAIN {
 
+    //PART III - Question format setup
     //Custom class object array created
     //Located in the "MAIN" class for accessibility
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
@@ -46,7 +47,7 @@ public class InterviewNinja_MAIN {
         }
     }
 
-
+    //PART II - The timer setup
     public static void questionAndTimeWindowSetup(String str, String time) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
@@ -106,13 +107,15 @@ public class InterviewNinja_MAIN {
         driver2.quit();
         driver1.quit();
     }
-/*
+
+    //PART III - Player selection setup
+    /*
 TODO ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WILL GO.
-So in RoundRobin, if there are 5 players, we want to enter everyones names and then prompt the name later in the game when its that
+So in RoundRobin, if there are 5 players, we want to enter everyone names and then prompt the name later in the game when its that
 person's turn.
  */
 
-
+    //PART IV - Game setup
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
         try {
             FileInputStream file1 = new FileInputStream("src/main/java/InterviewNinja_GAME/Questions.txt");
@@ -185,7 +188,7 @@ person's turn.
                     questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, wholeQuestionsWithSolutionList.get(randInt).time); // RUNS
                     //****//Make it come out with a typeWriter effect, use a diff method with an, arrayList, for loop and sleep..make the sum of the milliseconds open the second window
 
-//task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM!
+//TODO task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM!
                     if (wholeQuestionsWithSolutionList.get(randInt).isSolvedCount >= 2) {
                         wholeQuestionsWithSolutionList.remove(wholeQuestionsWithSolutionList.get(randInt));
                     }
