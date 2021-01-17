@@ -86,3 +86,13 @@
 [TQ] 85. Write a method that can check if a number is prime or not. (2 min.) - Solution:
 [TQ] 86. Write a return method that returns the  Fibonacci of any given number. (2 min.) - Solution:
 [TQ] 87. Given a list of fruit names: "Apple", "Pear", "Pomegranate", "Apple" Write a java operation to remove all the names Apple. (2 min.) - Solution:
+[Java] 88. Can we override the static methods? (2 min.) - Solution: No, we can not override static methods. If a static method is created with a similar method signature as a method being passed down by inheritance this will be method hiding, not  overriding.
+[Java] 89. Can we execute a program without main() method? (2 min.) - Solution: Yes, one of the ways to execute the program without the main method is using static block. Also, in testing we use other approaches such as the Test annotations to run the code.
+[Java] 90. What is difference between stack and heap? (2 min.) - Solution: Both are used for memory but have different purposes. Stack: Stores primitives, method calls, and references; Heap: Stores the objects themselves. The String pool is also in the heap.
+[Java] 91. What are Wrapper classes? (2 min.) - Solution: Wrapper classes are object representations of primitive datatypes. These classes are needed to be able to store primitive like data in collections such as ArrayList. These wrapper classes also have useful utility methods.
+
+
+
+
+
+
