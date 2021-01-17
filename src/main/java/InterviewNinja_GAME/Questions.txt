@@ -69,4 +69,20 @@
 [SS] 68. Which part of the regression test should be automated? (3 min.) - Solution: tests which are stable,  repeated frequently, simple and required no tester input  are good candidates for automation (edited)
 [Java] 69. What is the abstract concept in OOP and why do we use it? Give one example please (2 min.) - Solution: Abstract classes help us organize what all the subclasses SHOULD have/do
 [Java] 70. What is the difference between Interface and Abstraction? How are each created? What methods cannot be abstract/interfaced? (3 min.) - Solution:
-
+[TQ] 71. Write a return method that can reverse  String. (2 min.) - Solution:
+[TQ] 72. Write a return method that can remove the duplicated values from String. (2 min.) - Solution:
+[TQ] 73. Write a return  method that can find the unique characters from the String. (2 min.) - Solution:
+[TQ] 74. Write a return method that check if a string is build out of the same letters as another string. (2 min.) - Solution:
+[TQ] 75. Write a return method that can find the frequency of characters. (2 min.) - Solution:
+[TQ] 76. Write a method that can return the sum of the digits in a string. (2 min.) - Solution:
+[TQ] 77. Write a method that can find the maximum number from an int Array. (2 min.) - Solution:
+[TQ] 78. Write a method that can find the minimum number from an int Array. (2 min.) - Solution:
+[TQ] 79. Write a return method that can concate two arrays. (2 min.) - Solution:
+[TQ] 80. Write  a method which can identifies given number is even or odd.  (2 min.) - Solution:
+[TQ] 81. Write a method which prints out the numbers from 1 to 30 but for numbers which are a multiple of 3, print "FIN" instead of the number and for numbers which are a multiple of 5, print "RA" instead of the number. for numbers which are a multiple of both 3 and 5, print "FINRA" instead of the number. (2 min.) - Solution:
+[TQ] 82. Write a method that can divide two numbers without using division operator. (2 min.) - Solution:
+[TQ] 83. Swap two variable' values without using a third variable. (2 min.) - Solution:
+[TQ] 84. Write a return method that returns the factorial number of any given number. (2 min.) - Solution:
+[TQ] 85. Write a method that can check if a number is prime or not. (2 min.) - Solution:
+[TQ] 86. Write a return method that returns the  Fibonacci of any given number. (2 min.) - Solution:
+[TQ] 87. Given a list of fruit names: "Apple", "Pear", "Pomegranate", "Apple" Write a java operation to remove all the names Apple. (2 min.) - Solution:
