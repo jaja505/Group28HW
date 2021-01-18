@@ -110,10 +110,48 @@ public class InterviewNinja_MAIN {
 
     //PART III - Player selection setup
     /*
-TODO ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WILL GO. - Steph start the new custom class for people. Daniel work on it after.
+TODO ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WILL GO. - Steph start the new custom class for people. Daniel work on it after. (DONE)
 So in RoundRobin, if there are 5 players, we want to enter everyone names and then prompt the name later in the game when its that
 person's turn.
  */
+
+    public static void playersSelection() {
+
+        ArrayList<String> playersNames = new ArrayList<>();
+
+        Scanner scan = new Scanner(System.in);
+
+        Random rand3 = new Random();
+
+
+        System.out.println("How many players?");
+        int players = scan.nextInt();
+        int count = 0;
+        for (int i = 0; i < players; i++) {
+            if (players == 1) {
+                System.out.println("You are playing SOLO");
+                continue;
+            } else {
+                count++;
+                System.out.println("Enter player " + count + " name");
+                String playerName = scan.next();
+                playersNames.add(playerName);
+            }
+        }
+
+        System.out.println("Players order will be as follow: ");
+
+        ArrayList<String> tempPlayersNames = new ArrayList<>();
+
+        while (!playersNames.isEmpty()) {
+            int randName = rand3.nextInt(playersNames.size());
+            tempPlayersNames.add(playersNames.get(randName));
+            playersNames.remove(randName);
+        }
+        System.out.println(tempPlayersNames);
+    }
+
+
 
     //PART IV - Game setup
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
@@ -128,10 +166,7 @@ person's turn.
 
         Scanner scan = new Scanner(System.in);
 
-        /* Commented out the players
-        System.out.println("How many players?");
-        int players = scan.nextInt();
-        */
+
         System.out.println("\n" +
                 "██╗███╗░░██╗████████╗███████╗██████╗░██╗░░░██╗██╗███████╗░██╗░░░░░░░██╗  ███╗░░██╗██╗███╗░░██╗░░░░░██╗░█████╗░\n" +
                 "██║████╗░██║╚══██╔══╝██╔════╝██╔══██╗██║░░░██║██║██╔════╝░██║░░██╗░░██║  ████╗░██║██║████╗░██║░░░░░██║██╔══██╗\n" +
@@ -172,14 +207,21 @@ person's turn.
         styleChosen = (typeOfGame == 1) ? "ROUND ROBIN STYLE" : "TOPIC BASED STYLE"; //customizes the output message for style of game the user chose
         System.out.println("\n>̶ You have chosen " + styleChosen);
 
+        //*********************************************************
+        //=========================================================
+
+        playersSelection();
+
+        //*********************************************************
+        //=========================================================
+
+
         if (typeOfGame == 1) {
 
             roundRobin:
             while (true) { //it will give player a random question and ask if he wants to keep playing
 
                 Random rand = new Random();
-                //ArrayList<QuestionAndSolution> tempQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
-
 
                 for (int i = 0; i < 1; i++) {//Controls how many questions are printed out
 
@@ -188,11 +230,17 @@ person's turn.
                     questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, wholeQuestionsWithSolutionList.get(randInt).time); // RUNS
                     //****//Make it come out with a typeWriter effect, use a diff method with an, arrayList, for loop and sleep..make the sum of the milliseconds open the second window
 
-//TODO task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM! - Steph
+//TODO task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM! - Steph (DONE)
+
+                    //Lambda expression: Predicate (removedIf();) used to removed questions that have been selected twice already
+                    wholeQuestionsWithSolutionList.removeIf(p -> p.isSolvedCount >= 2);
+
+                    /*
                     if (wholeQuestionsWithSolutionList.get(randInt).isSolvedCount >= 2) {
                         wholeQuestionsWithSolutionList.remove(wholeQuestionsWithSolutionList.get(randInt));
                     }
-                    // System.out.println(wholeQuestionsWithSolutionList.get(randInt).isSolvedCount);
+
+                    */
 
                     //Question and answer to be displayed after browsers .quit
                     System.out.println("===================================================================================================================================================");
@@ -313,7 +361,7 @@ person's turn.
                 }
                 //TODO Talk about what to do about prompting user or add time between questions or maybe a countdown or gives a setAmount of questions before prompting - DECIDE ON DEFAULT SETTINGS(topic based style)
 
-                if (topicQuestionsWithSolutionList.isEmpty()) {//add condition so it doesnt prompt when user has wrong input in Topic Selection
+                if (topicQuestionsWithSolutionList.isEmpty()) {
 
                     System.out.println(">̶ No more Questions for this topic left in the ArrayList");
                     System.out.println(">̶ Do you want to try a different topic?");
