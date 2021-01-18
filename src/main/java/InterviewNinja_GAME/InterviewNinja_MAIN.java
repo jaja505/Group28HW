@@ -24,7 +24,7 @@ import java.util.Scanner;
 
 public class InterviewNinja_MAIN {
 
-    //PART III - Question format setup
+    //PART I - Question format setup
     //Custom class object array created
     //Located in the "MAIN" class for accessibility
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
@@ -81,7 +81,7 @@ public class InterviewNinja_MAIN {
         driver2.manage().window().setSize(d2);
         driver2.get("https://timer.onlineclock.net/");//goes to URL
 
-//TODO FIX FOR 1 MINUTE!!!!!!
+//TODO FIX FOR 1 MINUTE!!!!!! -Daniel
 
         Select dropDown = new Select(driver2.findElement(By.id("minutesSelect")));//FORM SOURCE CODE
         //WORK ON THE TIMER
@@ -110,7 +110,7 @@ public class InterviewNinja_MAIN {
 
     //PART III - Player selection setup
     /*
-TODO ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WILL GO.
+TODO ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WILL GO. - Steph start the new custom class for people. Daniel work on it after.
 So in RoundRobin, if there are 5 players, we want to enter everyone names and then prompt the name later in the game when its that
 person's turn.
  */
@@ -188,7 +188,7 @@ person's turn.
                     questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, wholeQuestionsWithSolutionList.get(randInt).time); // RUNS
                     //****//Make it come out with a typeWriter effect, use a diff method with an, arrayList, for loop and sleep..make the sum of the milliseconds open the second window
 
-//TODO task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM!
+//TODO task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM! - Steph
                     if (wholeQuestionsWithSolutionList.get(randInt).isSolvedCount >= 2) {
                         wholeQuestionsWithSolutionList.remove(wholeQuestionsWithSolutionList.get(randInt));
                     }
@@ -213,7 +213,7 @@ person's turn.
                 String continueYesOrNo = scan.next();
                 continueYesOrNo = continueYesOrNo.toLowerCase();
                 //***NEED TO DO MORE FORMATTING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                if (continueYesOrNo.equalsIgnoreCase("yes") || continueYesOrNo.equalsIgnoreCase("y") || continueYesOrNo.equalsIgnoreCase("1")) {
+                if (continueYesOrNo.contains("yes") || continueYesOrNo.equalsIgnoreCase("y") || continueYesOrNo.equalsIgnoreCase("1")) {
                     continue roundRobin;
                 } else {
                     System.out.println("Thanks for playing!");
@@ -311,7 +311,7 @@ person's turn.
                         j--;
                     }
                 }
-
+                //TODO Talk about what to do about prompting user or add time between questions or maybe a countdown or gives a setAmount of questions before prompting - DECIDE ON DEFAULT SETTINGS(topic based style)
 
                 if (topicQuestionsWithSolutionList.isEmpty()) {//add condition so it doesnt prompt when user has wrong input in Topic Selection
 
@@ -324,7 +324,7 @@ person's turn.
                         continue;
                     } else {
                         System.out.println("Thanks for playing!");
-                        break;
+                        break; //ONLY WAY TO BREAK FROM WHILE LOOP
                     }
 
                 }
@@ -334,6 +334,6 @@ person's turn.
         }
 
     }
-
+//TODO Add settings to each style.
 
 }
