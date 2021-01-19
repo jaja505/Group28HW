@@ -27,7 +27,7 @@ public class InterviewNinja_MAIN {
     //PART I - Question format setup
     //Custom class object array created
     //Located in the "MAIN" class for accessibility
-    public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); // static variable that's created so we can use it throughout the whole class
+    public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
 
     public static void populateQuestionList(FileInputStream file1) {
         Scanner scanner = new Scanner(file1);
@@ -81,15 +81,11 @@ public class InterviewNinja_MAIN {
         driver2.manage().window().setSize(d2);
         driver2.get("https://timer.onlineclock.net/");//goes to URL
 
+//TODO FIX FOR 1 MINUTE!!!!!! -Daniel
 
         Select dropDown = new Select(driver2.findElement(By.id("minutesSelect")));//FORM SOURCE CODE
         //WORK ON THE TIMER
-        if(time.contains("1")){ // if the timer is "1 Minute" then we need to differentiate it from "Minutes"
-            dropDown.selectByVisibleText(time.concat("Minute"));
-        }else{
-            dropDown.selectByVisibleText(time.concat("Minutes"));
-        }
-
+        dropDown.selectByVisibleText(time.concat("Minutes"));
 
         //ADD TO LOOP A BUTTON IN HTML THAT WILL HELP US CLOSE THE BROWSERS IF THE PERSON ANSWERS THE QUESTION EARLIER THAN TIMER.
         //OR MAYBE TEXT IN THE INPUT FIELD FOR IT TO DETECT A STOP
