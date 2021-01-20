@@ -1,4 +1,5 @@
-[SS] 1. Tell me about yourself? (1 min.) - Solution: Varies from person to person. Your response should include the following: - How many years of experience in the IT industry  - What is your current position?  - Name of the current employer and a little bit of background information  - Mention your knowledge (briefly) on: 1. Agile methodology, 2. Technical skills and 3. Soft Skills
+[SS] 1. Tell me about yourself? (5 min.) - Solution: Varies from person to person. Your response should include the following: - How many years of experience in the IT industry  - What is your current position?  - Name of the current employer and a little bit of background information  - Mention your knowledge (briefly) on: 1. Agile methodology, 2. Technical skills and 3. Soft Skills
+[SS] 2. What skills and qualities are needed to become a SDET? (3 min.) - Solution: 1. Communication Skill (verbal and written), 2. Time Management & Organization Skills, 3. Great Attitude and 4. Passion
 [SS] 3. What are your strengths and your weaknesses? (3 min.) - Solution: Varies from person to person. Try to have 3 good strengths with examples ready. Your weaknesses should be positive. Nothing that could put into question your capabilities and interaction with the team.
 [SS] 4. What is your biggest accomplishments? (5 min.) - Solution: Varies from person to person. Try to map your achievements to the job description and build the answer around it. 1. Highlight if you have achievements in Process improvement. 2. If you have fixed any team members problems such as people issues. 3. Highlight If you have developed/implemented any automation frameworks or if you have provided contribution in bringing up the test coverage to maximum level. 4.Highlight if you have implemented any test design techniques especially to increase the test coverage. 5. Highlight if you have contributed anything out of your team. 6.Did you ever receive appreciations from Customer for providing quality products with zero or minimum bugs. 7.Are you part of a local testing groups, Test talks and contributing to a level people learn something from you. Do not hesitate to highlight it.
 [SS] 5. Where do you see yourself in five years' time? (3 min.) - Solution: The interviewer wants to understand more about your career goals and how this position would fit into your grand plan. They care about your career goals because they want to hire someone who is motivated, proactive, and likely to stick around and work hard if hired.
@@ -75,7 +76,7 @@
 [TQ] 76. Write a method that can return the sum of the digits in a string. (2 min.) - Solution:
 [TQ] 77. Write a method that can find the maximum number from an int Array. (2 min.) - Solution:
 [TQ] 78. Write a method that can find the minimum number from an int Array. (2 min.) - Solution:
-[TQ] 79. Write a return method that can concat two arrays. (2 min.) - Solution:
+[TQ] 79. Write a return method that can concate two arrays. (2 min.) - Solution:
 [TQ] 80. Write  a method which can identifies given number is even or odd.  (2 min.) - Solution:
 [TQ] 81. Write a method which prints out the numbers from 1 to 30 but for numbers which are a multiple of 3, print "FIN" instead of the number and for numbers which are a multiple of 5, print "RA" instead of the number. for numbers which are a multiple of both 3 and 5, print "FINRA" instead of the number. (2 min.) - Solution:
 [TQ] 82. Write a method that can divide two numbers without using division operator. (2 min.) - Solution:
@@ -89,3 +90,8 @@
 [Java] 90. What is difference between stack and heap? (2 min.) - Solution: Both are used for memory but have different purposes. Stack: Stores primitives, method calls, and references; Heap: Stores the objects themselves. The String pool is also in the heap.
 [Java] 91. What are Wrapper classes? (2 min.) - Solution: Wrapper classes are object representations of primitive datatypes. These classes are needed to be able to store primitive like data in collections such as ArrayList. These wrapper classes also have useful utility methods.
 [SS] 92. What did you talk about in your last retro meeting? Give an Example Please... (5 min.) - Solution: What went well during the last sprint / What didnt go well during the last sprint / How can we improve for the next sprint
+
+
+
+
+
