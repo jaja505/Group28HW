@@ -25,18 +25,22 @@ import java.util.Scanner;
 public class InterviewNinja_MAIN {
 
     //PART I - Question format setup
-    //Custom class object array created
-    //Located in the "MAIN" class for accessibility
-    public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>(); // static variable that's created so we can use it throughout the whole class
 
+    //Custom class object array created ---> Located in the "MAIN" class for accessibility ---> Specifier: static. One copy needed for all the classes.
+    public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
+
+    //Custom method with "FileInputStream" parameter
     public static void populateQuestionList(FileInputStream file1) {
+        //Scanner object to read from "file1" instead of "System.in"
         Scanner scanner = new Scanner(file1);
-        ArrayList<String> interviewQuestions = new ArrayList<>(); //to add all the interview questions
-
+        //ArrayList created to add all the interview questions from "file1"
+        ArrayList<String> interviewQuestions = new ArrayList<>();
+        //While loop added ---> loop will run each line of "file1". Each line is treated like an index.
         while (scanner.hasNext()) {
             interviewQuestions.add(scanner.nextLine());
         }
 
+        //For loop will iterate throughout the interviewQuestions ArrayList and it'll add each question to the wholeQuestionsWithSolutionList ArrayList
         for (int i = 0; i < interviewQuestions.size(); i++) {
             wholeQuestionsWithSolutionList.add(new QuestionAndSolution((i + 1)));
             wholeQuestionsWithSolutionList.get(i).questionPart = interviewQuestions.get(i).substring(interviewQuestions.get(i).indexOf("]") + 2, interviewQuestions.get(i).indexOf("-"));
@@ -47,7 +51,9 @@ public class InterviewNinja_MAIN {
         }
     }
 
+
     //PART II - The timer setup
+
     public static void questionAndTimeWindowSetup(String str, String time) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
@@ -84,9 +90,9 @@ public class InterviewNinja_MAIN {
 
         Select dropDown = new Select(driver2.findElement(By.id("minutesSelect")));//FORM SOURCE CODE
         //WORK ON THE TIMER
-        if(time.contains("1")){ // if the timer is "1 Minute" then we need to differentiate it from "Minutes"
+        if (time.contains("1")) { // if the timer is "1 Minute" then we need to differentiate it from "Minutes"
             dropDown.selectByVisibleText(time.concat("Minute"));
-        }else{
+        } else {
             dropDown.selectByVisibleText(time.concat("Minutes"));
         }
 
@@ -118,19 +124,24 @@ TODO ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WILL GO. - Steph
 So in RoundRobin, if there are 5 players, we want to enter everyone names and then prompt the name later in the game when its that
 person's turn.
  */
-
+    //Custom method created to develop the player's selection
     public static void playersSelection() {
 
+        //ArrayList created to add the name of the players
         ArrayList<String> playersNames = new ArrayList<>();
+        ArrayList<String> tempPlayersNames = new ArrayList<>();
 
+        //Scanner object added to take the player's input for both number of players and name of the players
         Scanner scan = new Scanner(System.in);
-
+        //Random object created to make random selection from the ArrayList
         Random rand3 = new Random();
 
-
-        System.out.println("How many players?");
+        System.out.println("\tHow many players?");
         int players = scan.nextInt();
         int count = 0;
+
+        //For loop used to iterate throughout the number of players entered by user.
+        // With the conditions inside the loop, it will be determined if player's name need to be entered
         for (int i = 0; i < players; i++) {
             if (players == 1) {
                 System.out.println("You are playing SOLO");
@@ -143,10 +154,11 @@ person's turn.
             }
         }
 
-        System.out.println("Players order will be as follow: ");
+        System.out.println("\tPlayers order will be as follow: ");
 
-        ArrayList<String> tempPlayersNames = new ArrayList<>();
-
+        //While loop used to iterate throughout the playersNames ArrayList. The loop will run as long the list is not empty
+        //In this loop the random variable will be initialized and it will pick name randomly from the playersName ArrayList.
+        //The name picked will be added to the tempPlayersName ArrayList
         while (!playersNames.isEmpty()) {
             int randName = rand3.nextInt(playersNames.size());
             tempPlayersNames.add(playersNames.get(randName));
@@ -156,9 +168,12 @@ person's turn.
     }
 
 
-
     //PART IV - Game setup
+
+
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
+
+        //Try & Catch exception added in the case "file1" path is lost
         try {
             FileInputStream file1 = new FileInputStream("src/main/java/InterviewNinja_GAME/Questions.txt");
             populateQuestionList(file1); // method to populate an array with all the questions from Questions.txt
@@ -167,7 +182,7 @@ person's turn.
             System.exit(0);
         }
 
-
+        //Scanner object added to take the player's input regarding game styles and topics
         Scanner scan = new Scanner(System.in);
 
 
@@ -187,52 +202,62 @@ person's turn.
         //=========================================================
         System.out.println("\t[1] Round Robin Style - Multiplayer");
         /*
-        RoundRobin Explanation: Gets a random question from the Questions.txt and sets a timer for it.
-        Goes until list is finished and each question can only be asked 2 times
+        RoundRobin Explanation:
+        1. Gets a random question from the Questions.txt and sets a timer for it.
+        2. Runs until list is finished.
+        3. Each question can only be asked twice.
          */
         //*********************************************************
         //=========================================================
 
         System.out.println("\t[2] Topic Based Style - Multiplayer");
         /*
-        1. Present user with a menu of topics
-        2. Need to ask user what topic he would like to play...
-        3. Game takes every question with that topic and adds it to an ArrayList
-        4. Runs the randomQuestion generator...Questions are limited to being shown only 1 time!
+        TopicBased Explanation:
+        1. Presents player(s) with a menu of topics to pick from.
+        2. Takes every question with that topic and adds it to an ArrayList.
+        3. Runs the randomQuestion generator.
+        4. Each question can only be asked once.
          */
+        //*********************************************************
+        //=========================================================
 
-
-        //NEW GAME MODE 3 (single player)- SET THE TIME YOU WANT..and that sets the time FOR all the QUESTION...
-        //NEW GAME MODE 4 (multiplayer) - HOT SEAT, ALL QUESTION TIMES ARE HALVED.
         System.out.println();
+
+        //Customizes the output message for style of game the user chose to play
         System.out.print(">̶ Style Number: ");
         int typeOfGame = scan.nextInt();
         String styleChosen = "";
-        styleChosen = (typeOfGame == 1) ? "ROUND ROBIN STYLE" : "TOPIC BASED STYLE"; //customizes the output message for style of game the user chose
+        styleChosen = (typeOfGame == 1) ? "ROUND ROBIN STYLE" : "TOPIC BASED STYLE";
         System.out.println("\n>̶ You have chosen " + styleChosen);
 
         //*********************************************************
         //=========================================================
 
+        //Player selection custom method call
         playersSelection();
 
         //*********************************************************
         //=========================================================
 
 
+        //If conditions(1 of 2) implemented to move throughout the different game styles according to player's selection.
         if (typeOfGame == 1) {
 
             roundRobin:
-            while (true) { //it will give player a random question and ask if he wants to keep playing
+            //While loop implemented. It will run the game as long player selects to do so.
+            while (true) {
 
+                //Random object created to randomly select a question from the wholeQuestionSolutionList ArrayList
                 Random rand = new Random();
 
-                for (int i = 0; i < 1; i++) {//Controls how many questions are printed out
+                //For loop implemented to control the number of questions printed out
+                for (int i = 0; i < 1; i++) {
 
-                    int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "rand"
+                    //Initializing a random number using our RandomClass object "rand"
+                    int randInt = rand.nextInt(wholeQuestionsWithSolutionList.size());
                     wholeQuestionsWithSolutionList.get(randInt).questionAnswered();
                     questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, wholeQuestionsWithSolutionList.get(randInt).time); // RUNS
-                    //****//Make it come out with a typeWriter effect, use a diff method with an, arrayList, for loop and sleep..make the sum of the milliseconds open the second window
+                    // TODO Make it come out with a typeWriter effect, use a diff method with an, arrayList, for loop and sleep..make the sum of the milliseconds open the second window
 
 //TODO task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM! - Steph (DONE)
 
@@ -246,25 +271,30 @@ person's turn.
 
                     */
 
-                    //Question and answer to be displayed after browsers .quit
+                    //Question and answer to be displayed after browsers quit
                     System.out.println("===================================================================================================================================================");
 
-                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart);//prints the question
-                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).solutionPart);//prints out the solution
-                    //***WRAP TEXT IN THE CONSOLE TO MAKE SOLUTIONS INTO MULTIPLE LINES INSTEAD OF A LONG RUNNING LINE
+                    //Prints the question.
+                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).questionPart);
+                    //Prints out the solution.
+                    System.out.println(wholeQuestionsWithSolutionList.get(randInt).solutionPart);
+
                     System.out.println("===================================================================================================================================================");
                 }
 
-
+                //If condition implemented to notify player if there are no more questions in the ArrayList
                 if (wholeQuestionsWithSolutionList.isEmpty()) {
                     System.out.println(">̶ No more Questions. Thanks for playing");
                     break;
                 }
+
                 System.out.println(">̶ Do you want to continue?");
                 System.out.print("Yes or No: ");
                 String continueYesOrNo = scan.next();
                 continueYesOrNo = continueYesOrNo.toLowerCase();
-                //***NEED TO DO MORE FORMATTING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //TODO*** NEED TO DO MORE FORMATTING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                //If condition implemented to continue game if player's input is "yes", otherwise game will be terminated
                 if (continueYesOrNo.contains("yes") || continueYesOrNo.equalsIgnoreCase("y") || continueYesOrNo.equalsIgnoreCase("1")) {
                     continue roundRobin;
                 } else {
@@ -279,11 +309,13 @@ person's turn.
             }
         }
 
+        //If conditions(2 of 2) implemented to move throughout the different game styles according to player's selection.
         if (typeOfGame == 2) {
             System.out.println("===================================================================================================================================================");
             System.out.println("WELCOME TO INTERVIEW NINJA - TOPIC!\n");
 
             gameMenu:
+            //While loop implemented. It will run the game as long player selects to do so.
             while (true) {
 
                 System.out.println(">̶ Select topic to be quizzed on:");
@@ -294,15 +326,19 @@ person's turn.
                 System.out.println("[5] Jira");
                 System.out.println("[6] Technical ");
 
-                String topicSelection = scan.next();//SELECT USER INPUt OF STYLE
+                //Variable that will saved player's input regarding game style
+                String topicSelection = scan.next();
 
+                //Random object created to randomly select a question from the wholeQuestionSolutionList ArrayList
                 Random rand2 = new Random();
 
-
-                ArrayList<QuestionAndSolution> topicQuestionsWithSolutionList = new ArrayList<>(); //CREATED OUR CUSTOM CLASS OBJECT ARRAY FOR QUESTIONS SELECTED
+                //ArrayList created from custom class object that it will contain all the questions based on topic selection
+                ArrayList<QuestionAndSolution> topicQuestionsWithSolutionList = new ArrayList<>();
                 String topic = "";
 
 
+                //Switch statement implemented to compare the value the "topicSelection" variable
+                // topic variable will be assigned based on the number the player inputted and assigned to topicSelection
                 switch (topicSelection) {
 
                     case "1":
@@ -333,31 +369,36 @@ person's turn.
                         System.out.println("\n******************************************************************************************************************\nYour input is not valid...Please choose from the following menu...\n");
                         continue gameMenu;
 
-                } // topic variable will be assigned based on the number the user inputted and assigned to topicSelection
+                }
 
 
-                for (QuestionAndSolution each : wholeQuestionsWithSolutionList) { //To create an Array List based on Topic selection
+                //For loop implemented to iterate throughout the wholeQuestionsWithSolutionList ArrayList and add the questions to new create ArrayList based on Topic selection
+                for (QuestionAndSolution each : wholeQuestionsWithSolutionList) {
                     if (each.topic.equals(topic)) {
                         topicQuestionsWithSolutionList.add(each);
                     }
-
                 }
 
-                for (int j = 0; j < topicQuestionsWithSolutionList.size(); j++) { //run a loop based on the Array List size
 
+                //For loop that it will iterate throughout the topicQuestionsWithSolutionList ArrayList size
+                for (int j = 0; j < topicQuestionsWithSolutionList.size(); j++) {
 
-                    int randTopic = rand2.nextInt(topicQuestionsWithSolutionList.size());//initializing a random number using our RandomClass object "randTopic"
+                    //Initializing a random number using our RandomClass object "randTopic"
+                    int randTopic = rand2.nextInt(topicQuestionsWithSolutionList.size());
                     topicQuestionsWithSolutionList.get(randTopic).questionAnswered();
                     questionAndTimeWindowSetup(topicQuestionsWithSolutionList.get(randTopic).questionPart, topicQuestionsWithSolutionList.get(randTopic).time);
 
 
                     System.out.println("===================================================================================================================================================");
 
-                    System.out.println(topicQuestionsWithSolutionList.get(randTopic).questionPart);//prints the question
-                    System.out.println(topicQuestionsWithSolutionList.get(randTopic).solutionPart);//prints out the solution
-                    //***WRAP TEXT IN THE CONSOLE TO MAKE SOLUTIONS INTO MULTIPLE LINES INSTEAD OF A LONG RUNNING LINE
+                    //Prints the question
+                    System.out.println(topicQuestionsWithSolutionList.get(randTopic).questionPart);
+                    //Prints out the solution
+                    System.out.println(topicQuestionsWithSolutionList.get(randTopic).solutionPart);
+
                     System.out.println("===================================================================================================================================================");
 
+                    //If condition implemented to to discard questions already picked and removed from ArrayList
                     if (topicQuestionsWithSolutionList.get(randTopic).isSolvedCount >= 1) {
                         topicQuestionsWithSolutionList.remove(topicQuestionsWithSolutionList.get(randTopic));
                         j--;
@@ -365,6 +406,7 @@ person's turn.
                 }
                 //TODO Talk about what to do about prompting user or add time between questions or maybe a countdown or gives a setAmount of questions before prompting - DECIDE ON DEFAULT SETTINGS(topic based style)
 
+                //If condition implemented to to let player know that topic ArrayList is empty
                 if (topicQuestionsWithSolutionList.isEmpty()) {
 
                     System.out.println(">̶ No more Questions for this topic left in the ArrayList");
@@ -372,6 +414,7 @@ person's turn.
                     System.out.print("Yes or No: ");
                     String continueYesOrNo = scan.next();
 
+                    //If condition implemented to continue game if player's input is "yes", otherwise game will be terminated
                     if (continueYesOrNo.contains("yes") || continueYesOrNo.contains("y") || continueYesOrNo.equalsIgnoreCase("1")) {
                         continue;
                     } else {
