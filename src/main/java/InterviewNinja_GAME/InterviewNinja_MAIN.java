@@ -107,7 +107,7 @@ public class InterviewNinja_MAIN {
         driver2.quit();
         driver1.quit();
     }
-
+//Todo add an "about me" part in this game somewhere - Daniel
     //PART III - Player selection setup
     /*
 TODO ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WILL GO. - Steph start the new custom class for people. Daniel work on it after.
@@ -132,6 +132,9 @@ person's turn.
         System.out.println("How many players?");
         int players = scan.nextInt();
         */
+
+        //Todo add info about the actual amount of questions and amount of questions of each topic..an INFO option - Daniel
+
         System.out.println("\n" +
                 "██╗███╗░░██╗████████╗███████╗██████╗░██╗░░░██╗██╗███████╗░██╗░░░░░░░██╗  ███╗░░██╗██╗███╗░░██╗░░░░░██╗░█████╗░\n" +
                 "██║████╗░██║╚══██╔══╝██╔════╝██╔══██╗██║░░░██║██║██╔════╝░██║░░██╗░░██║  ████╗░██║██║████╗░██║░░░░░██║██╔══██╗\n" +
@@ -139,7 +142,7 @@ person's turn.
                 "██║██║╚████║░░░██║░░░██╔══╝░░██╔══██╗░╚████╔╝░██║██╔══╝░░░░████╔═████║░  ██║╚████║██║██║╚████║██╗░░██║██╔══██║\n" +
                 "██║██║░╚███║░░░██║░░░███████╗██║░░██║░░╚██╔╝░░██║███████╗░░╚██╔╝░╚██╔╝░  ██║░╚███║██║██║░╚███║╚█████╔╝██║░░██║\n" +
                 "╚═╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝╚══════╝░░░╚═╝░░░╚═╝░░  ╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝");
-        System.out.println("________________________________________________________________________________________________________________________________________________________");
+        System.out.println("_______________________________________________________________________________________________________________________");
 
 
         System.out.println("What style of INTERVIEW NINJA do you want to play?");
@@ -226,7 +229,7 @@ person's turn.
                 */
             }
         }
-
+//todo add a countdown of how many questions are left of each topic and then the topic they choose count the number of questions as well - Steph
         if (typeOfGame == 2) {
             System.out.println("===================================================================================================================================================");
             System.out.println("WELCOME TO INTERVIEW NINJA - TOPIC!\n");
