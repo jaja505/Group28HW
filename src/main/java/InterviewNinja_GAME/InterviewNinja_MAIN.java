@@ -259,7 +259,7 @@ person's turn.
                     questionAndTimeWindowSetup(wholeQuestionsWithSolutionList.get(randInt).questionPart, wholeQuestionsWithSolutionList.get(randInt).time); // RUNS
                     // TODO Make it come out with a typeWriter effect, use a diff method with an, arrayList, for loop and sleep..make the sum of the milliseconds open the second window
 
-//TODO task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM! - Steph (DONE)
+//TODO task = NEED TO CHANGE THIS STATEMENT BELOW TO PREDICATE FORM! - Steph (DONE DONE DONE)
 
                     //Lambda expression: Predicate (removedIf();) used to removed questions that have been selected twice already
                     wholeQuestionsWithSolutionList.removeIf(p -> p.isSolvedCount >= 2);
