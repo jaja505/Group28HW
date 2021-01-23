@@ -10,3 +10,9 @@ THIS IS THE FORMAT:
 
 
 *Time: MUST HAVE ".". at the end of "min". Else exception..
+
+- FileInputStream: class obtains input bytes from a file. It is used for reading byte oriented data (Streams of raw bytes). You can also read character-stream data.
+
+
+        //NEW GAME MODE 3 (single player)- SET THE TIME YOU WANT..and that sets the time FOR all the QUESTION...
+        //NEW GAME MODE 4 (multiplayer) - HOT SEAT, ALL QUESTION TIMES ARE HALVED.
