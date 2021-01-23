@@ -12,25 +12,25 @@ public class Exs2 {
   // ****************************************
   //4. collect all similar WebElements containing movie info on to List named movies
   // They should be <div> tags that include all movie info
-  // Image, movie name, raitind etc.
+  // Image, movie name, rating etc.
   //5. remove WebElement with movie rating less than 6
-  //6. collect target WebElements from inside <head></head> to List named stylings:
+  //6. collect target WebElements from inside <head></head> to List named styling:
   // target: <link rel="stylesheet" type="text/css">
   // 7. Create your HTML file inside same package as your current class
-  // place all different <link> elements from you sylings List inside <head></head> of your HTML file
-  // These stylesheets are used to aply styles to your movie elements that found inside <body></body>
+  // place all different <link> elements from you styling List inside <head></head> of your HTML file
+  // These stylesheets are used to apply styles to your movie elements that found inside <body></body>
   //8. Setup the target elements (look below) inside <body></body> of your HTML file
   // target: 
   // <div class="lister list detail sub-list">
   //    <div class="lister-list"></div>
   // </div>
   //9. Now let's put all the movies from movies List to your HTML file
-  //place all WebElemens with movie info inside this div tag:
+  //place all WebElements with movie info inside this div tag:
   // <div class="lister-list"></div>
   //10. open your HTML file with driver
   //11. Additional task:
-  //Test your HTML using Assert methods that all raitings are >=6
-  //this time decide yourself how you would get raitings from your HTML file
+  //Test your HTML using Assert methods that all ratings are >=6
+  //this time decide yourself how you would get ratings from your HTML file
   //and how would you check the condition
 }
 ```
@@ -39,7 +39,7 @@ public class Exs2 {
 
 #### Task:
 
-Based on user stories and acceptance criterias create:
+Based on user stories and acceptance criteria create:
 
 *Optional, you can create all or one of them* 
 
