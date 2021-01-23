@@ -25,6 +25,9 @@ import java.util.Scanner;
 public class InterviewNinja_MAIN {
 
     //PART I - Question format setup
+    //Custom class object array created
+    //Located in the "MAIN" class for accessibility
+    public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
 
     //Custom class object array created ---> Located in the "MAIN" class for accessibility ---> Specifier: static. One copy needed for all the classes.
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
@@ -90,9 +93,9 @@ public class InterviewNinja_MAIN {
 
         Select dropDown = new Select(driver2.findElement(By.id("minutesSelect")));//FORM SOURCE CODE
         //WORK ON THE TIMER
-        if (time.contains("1")) { // if the timer is "1 Minute" then we need to differentiate it from "Minutes"
+        if(time.contains("1")){ // if the timer is "1 Minute" then we need to differentiate it from "Minutes"
             dropDown.selectByVisibleText(time.concat("Minute"));
-        } else {
+        }else{
             dropDown.selectByVisibleText(time.concat("Minutes"));
         }
 
@@ -117,10 +120,10 @@ public class InterviewNinja_MAIN {
         driver2.quit();
         driver1.quit();
     }
-
+//Todo add an "about me" part in this game somewhere - Daniel
     //PART III - Player selection setup
     /*
-TODO ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WILL GO. - Steph start the new custom class for people. Daniel work on it after. (DONE)
+TODO ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WILL GO. - Steph start the new custom class for people. Daniel work on it after.
 So in RoundRobin, if there are 5 players, we want to enter everyone names and then prompt the name later in the game when its that
 person's turn.
  */
@@ -185,6 +188,13 @@ person's turn.
         //Scanner object added to take the player's input regarding game styles and topics
         Scanner scan = new Scanner(System.in);
 
+        /* Commented out the players
+        System.out.println("How many players?");
+        int players = scan.nextInt();
+        */
+
+        //Todo add info about the actual amount of questions and amount of questions of each topic..an INFO option - Daniel
+
 
         System.out.println("\n" +
                 "██╗███╗░░██╗████████╗███████╗██████╗░██╗░░░██╗██╗███████╗░██╗░░░░░░░██╗  ███╗░░██╗██╗███╗░░██╗░░░░░██╗░█████╗░\n" +
@@ -193,7 +203,7 @@ person's turn.
                 "██║██║╚████║░░░██║░░░██╔══╝░░██╔══██╗░╚████╔╝░██║██╔══╝░░░░████╔═████║░  ██║╚████║██║██║╚████║██╗░░██║██╔══██║\n" +
                 "██║██║░╚███║░░░██║░░░███████╗██║░░██║░░╚██╔╝░░██║███████╗░░╚██╔╝░╚██╔╝░  ██║░╚███║██║██║░╚███║╚█████╔╝██║░░██║\n" +
                 "╚═╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝╚══════╝░░░╚═╝░░░╚═╝░░  ╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝");
-        System.out.println("________________________________________________________________________________________________________________________________________________________");
+        System.out.println("_______________________________________________________________________________________________________________________");
 
 
         System.out.println("What style of INTERVIEW NINJA do you want to play?");
@@ -308,6 +318,7 @@ person's turn.
                 */
             }
         }
+//todo add a countdown of how many questions are left of each topic and then the topic they choose count the number of questions as well - Steph
 
         //If conditions(2 of 2) implemented to move throughout the different game styles according to player's selection.
         if (typeOfGame == 2) {
