@@ -3,12 +3,6 @@
 please create Exs2 class inside your package and copy past code below:
 
 ```java
-import AsignmentUtils.Population.Person;
-import AsignmentUtils.Population.AsignmentUtils.Population;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Exs1 {
   //TC#1: filter movies by rating
   //1. Open Chrome browser
