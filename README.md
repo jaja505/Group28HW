@@ -3,7 +3,7 @@
 please create Exs2 class inside your package and copy past code below:
 
 ```java
-public class Exs1 {
+public class Exs2 {
   //TC#1: filter movies by rating
   //1. Open Chrome browser
   //2. Go to https://www.imdb.com/list/ls026253657/
