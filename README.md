@@ -35,12 +35,14 @@ public class Exs2 {
 }
 ```
 
-##Second exercise (optional, a bit more advanced)
+## Second exercise (optional, a bit more advanced)
 
-####Task:
+#### Task:
 
 Based on user stories and acceptance criterias create:
+
 *Optional, you can create all or one of them* 
+
 1. Test plan that includes test and execution tickets
 2. Automation framework (smoke test) on Selenium to run all scenarios
 
