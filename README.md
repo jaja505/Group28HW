@@ -50,51 +50,39 @@ Environment: "https://sobirjon001.github.io/todo_list/"
 
 User stories and scenarios:
 
-1. User is able to add new task to To-Do list
-
-  a. User is able to type characters inside input box (task text)
-  b. When user clicks plus button new task appeared in list below input box
-  C. New task has exactly the same text that was typed by user in input box
-
-2. User is not able to add new task with blank/empty input box
-  
-  a. While input box is empty or has space character user clicks plus button
-  b. New task didn't appeared in list below input box
-  c. Window alerts the user about invalid input
-
+1. User is able to add a new task to To-Do list
+* User is able to type characters inside input box (task text) 
+* When user clicks plus button a new task appeared in list below input box
+* A new task has exactly the same text that was typed by user in input box
+2. User is not able to add a new task with blank/empty input box
+* While input box is empty or has space character user clicks plus button
+* A new task didn't appear in list below input box
+* Window alerts the user about invalid input
 3. User is not able to add new duplicate task
-  
-  a. User types exactly same text as previously created task inside input box
-  b. When user clicks plus button new (duplicate) task didn't appeared in list
-  c. Window alerts the user about invalid input
-
-4. User is able to toggle check mark task in list 
-  
-  a. Given user created some tasks user clicks green cheek mark button on task
-  b. This task's text becomes outlined
-  c. This task styling becomes under shadow
-  d. User clicks green cheek mark button of same task again
-  e. This task's text returns back to not outlined
-  f. This task's styling return back to regular
-
+* User types exactly same text as previously created task inside input box
+* When user clicks plus button new (duplicate) task didn't appeared in list
+* Window alerts the user about invalid input
+4. User is able to toggle check mark task in list
+* Given user created some tasks' user clicks green cheek mark button on task
+* This task's text becomes outlined
+* This task styling becomes under shadow
+* User clicks green cheek mark button of same task again
+* This task's text returns to not outlined
+* This task's styling return to regular
 5. User is able to filter tasks based on check mark condition
-    
+   
   *Given that user added some tasks and marked some of them*
-  a. Drop down input default selection is "All"
-  b. User clicks drop down input
-  c. Drop down input shows all possible selections
-  d. User clicks on "Completed" selection
-  e. All marked task are displayed on list
-  f. All not marked tasks are not displayed on list
-  g. *Do same for "Uncompleted" selection
-  e. *Select back to "All" to return to default condition for next tests*
-
-6. User is able to delete task for list
-  
-  a. Given user created some tasks
-  b. User clicks on red delete button on the task
-  c. That exactly task is gone, doesn't exist on page
-  d. *That task is not in not displayed state - it's not exist \
-  so you have to handle noSuchElementExeption and use it in Assert report*
-  e. *Tester has to remove tasks in different order to make sure \
-  only particular task is removed not the other one*
+* Check if drop-down input default selection is "All"
+* User clicks drop-down input
+* Drop-down input shows all possible selections
+* User clicks on "Completed" selection
+* All marked task are displayed on list
+* All not marked tasks are not displayed on list
+* *Do same for "Uncompleted" selection*
+* *Select back to "All" to return to default condition for next tests*
+6. User is able to delete a task for list 
+* Given user created some tasks
+* User clicks on red delete button on the task
+* That exactly task is gone, doesn't exist on page
+* *That task is not in not displayed state - it's not existed, so you have to handle "noSuchElementException" and use it in Assert report*
+* *Tester has to remove tasks in different order to make sure only particular task is removed not the other one*
