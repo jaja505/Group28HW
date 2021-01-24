@@ -24,10 +24,10 @@ import java.util.Scanner;
 
 public class InterviewNinja_MAIN {
 
+
     //PART I - Question format setup
     //Custom class object array created
     //Located in the "MAIN" class for accessibility
-    public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
 
     //Custom class object array created ---> Located in the "MAIN" class for accessibility ---> Specifier: static. One copy needed for all the classes.
     public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
@@ -93,9 +93,9 @@ public class InterviewNinja_MAIN {
 
         Select dropDown = new Select(driver2.findElement(By.id("minutesSelect")));//FORM SOURCE CODE
         //WORK ON THE TIMER
-        if(time.contains("1")){ // if the timer is "1 Minute" then we need to differentiate it from "Minutes"
+        if (time.contains("1")) { // if the timer is "1 Minute" then we need to differentiate it from "Minutes"
             dropDown.selectByVisibleText(time.concat("Minute"));
-        }else{
+        } else {
             dropDown.selectByVisibleText(time.concat("Minutes"));
         }
 
@@ -120,7 +120,8 @@ public class InterviewNinja_MAIN {
         driver2.quit();
         driver1.quit();
     }
-//Todo add an "about me" part in this game somewhere - Daniel
+
+    //Todo add an "about me" part in this game somewhere - Daniel
     //PART III - Player selection setup
     /*
 TODO ADD PEOPLE SO THAT WE CAN KNOW THE ORDER OF THE PEOPLE WHO WILL GO. - Steph start the new custom class for people. Daniel work on it after.
@@ -175,6 +176,10 @@ person's turn.
 
 
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
+
+        int a = 8;
+        int b = 7;
+
 
         //Try & Catch exception added in the case "file1" path is lost
         try {
