@@ -30,7 +30,7 @@ public class InterviewNinja_MAIN {
     //Located in the "MAIN" class for accessibility
 
     //Custom class object array created ---> Located in the "MAIN" class for accessibility ---> Specifier: static. One copy needed for all the classes.
-    public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
+    //public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
 
     //Custom method with "FileInputStream" parameter
     public static void populateQuestionList(FileInputStream file1) {
