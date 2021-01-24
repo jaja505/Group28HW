@@ -34,10 +34,11 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.1.0</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
 
         <!-- Java Faker-->
+        <!-- java Faker -->
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
