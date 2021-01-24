@@ -30,7 +30,7 @@ public class InterviewNinja_MAIN {
     //Located in the "MAIN" class for accessibility
 
     //Custom class object array created ---> Located in the "MAIN" class for accessibility ---> Specifier: static. One copy needed for all the classes.
-    //public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
+    public static ArrayList<QuestionAndSolution> wholeQuestionsWithSolutionList = new ArrayList<>();
 
     //Custom method with "FileInputStream" parameter
     public static void populateQuestionList(FileInputStream file1) {
@@ -183,7 +183,7 @@ person's turn.
 
         //Try & Catch exception added in the case "file1" path is lost
         try {
-            FileInputStream file1 = new FileInputStream("src/main/java/InterviewNinja_GAME/Questions.txt");
+            FileInputStream file1 = new FileInputStream("src/test/java/InterviewNinja_GAME/Questions.txt");
             populateQuestionList(file1); // method to populate an array with all the questions from Questions.txt
         } catch (FileNotFoundException e) {
             System.err.println("File path is wrong dude, Go To File1 and Change its path! I wont Load the questions/program till you change it");
