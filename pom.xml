@@ -15,6 +15,7 @@
 
     <dependencies>
 
+
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -29,13 +30,24 @@
             <version>4.2.2</version>
         </dependency>
 
-        <!--TestNG -->
+
+        <!--JAVA FAKER -->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+
+        <!-- TestNG -->
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.1.0</version>
             <scope>test</scope>
         </dependency>
+
 
         <dependency>
             <groupId>org.testng</groupId>
@@ -44,13 +56,6 @@
             <scope>main</scope>
         </dependency>
 
-        <!-- Java Faker-->
-        <!-- java Faker -->
-        <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
-        </dependency>
 
     </dependencies>
 
